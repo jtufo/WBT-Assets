@@ -1,0 +1,65 @@
+body.programs.index {
+  .page-header-inner {
+    p {
+      padding: {
+        left: 15px;
+        right: 15px;
+      }
+    }
+  }
+
+  .program-container {
+    @include font-size(14px);
+    color: $color-purple-dark;
+    display: block;
+    margin-bottom: 50px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .program-logo {
+    padding: 46%;
+    width: 100%;
+  }
+
+  .program-label {
+    font: {
+      family: $font-primary-bold;
+      weight: 700;
+    }
+    padding-top: 25px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  .program-learn {
+    font-family: $font-primary-medium;
+
+    a {
+      color: #58556c;
+    }
+  }
+
+  .promoted-program {
+    border-bottom: 2px solid #eaeff1;
+    float: left;
+    margin-bottom: 45px;
+    padding-bottom: 35px;
+
+    div[id^="program-"] {
+      text-align: center;
+    }
+
+    .subheader {
+      margin: 0 0 10px;
+    }
+
+    p {
+      margin-bottom: 8px;
+    }
+
+    .visit-promoted {
+      @include font-size(14px);
+    }
+  }
+}

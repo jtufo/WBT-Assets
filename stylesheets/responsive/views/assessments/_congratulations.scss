@@ -1,0 +1,25 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.assessments.congratulations {
+    .health-risks-content {
+      padding: 0;
+    }
+
+    #assessment-score-graph {
+      margin: 0 auto;
+
+      &.comparison-score {
+        margin-bottom: 120px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $screen-xs-min) and (max-width : $screen-xs-max) {
+  body.assessments.congratulations {
+    .health-risk-improvements {
+      li {
+        margin: 0 2%;
+      }
+    }
+  }
+}

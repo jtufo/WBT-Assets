@@ -1,0 +1,61 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.accounts.index {
+    .page-header {
+      padding-bottom: 30px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .page-header-secondary {
+      margin-bottom: 50px;
+      padding: 20px 0;
+    }
+
+    .dc-account-img-mobile {
+      margin-bottom: 10px;
+      max-width: 65%;
+    }
+
+    .wbt-account-welcome {
+      p {
+        padding: 0;
+      }
+    }
+
+    .user-info {
+      margin-top: 0;
+    }
+
+    .user-info-centered {
+      display: block;
+      width: 100%;
+    }
+
+    .user-info-data {
+      float: none;
+      text-align: center;
+    }
+
+    .user-not-me {
+      display: block;
+      margin-top: -28px;
+      position: static;
+    }
+
+    #reveal-modal {
+      .accounts.modal-container {
+        .modal-dialog {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  iframe[name="account_external_authorization"] {
+    margin-left: -35px;
+    transform: scale(0.8);
+    width: auto;
+  }
+}

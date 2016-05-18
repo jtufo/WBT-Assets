@@ -1,0 +1,159 @@
+// ==========================================================================
+// This stylesheet contains components that sit inside your layout. (buttons, navigation, etc.)
+// ==========================================================================
+
+.btn-flat-purple {
+  @include solid-button($font-color: #ffffff);
+}
+
+.btn-yellow {
+  @include solid-button($btn-color: $color-yellow);
+  box-shadow: none;
+}
+
+.btn-onboarding-account {
+  margin-bottom: 15px;
+  width: 200px;
+}
+
+.flash {
+  *behavior: asset-url("polyfills/boxsizing.htc"); // CSS3 Fix for older versions of IE
+}
+
+form {
+  .form-error {
+    $icon-size: 70;
+    @include font-size(16px);
+    background: lighten($color-gray-light, 8%);
+    line-height: 1.6em;
+    margin: 0 auto 60px;
+    padding: 40px 65px 36px 50px;
+    width: 65%;
+
+    .fa-exclamation {
+      @include circle-icon($bg-color: $color-purple, $size: $icon-size, $font-size: 50px);
+      color: #ffffff;
+      float: left;
+      margin-right: 16px;
+    }
+
+    h4 {
+      @include font-size(30px);
+      color: $color-purple;
+      font: {
+        family: Arial, Helvetica, sans-serif;
+        weight: bold;
+      }
+      margin: 0 0 35px ($icon-size + 15px);
+    }
+
+    ul {
+      display: inline-block;
+      line-height: em(30);
+      margin: 0;
+      padding-left: 20px;
+    }
+  }
+}
+
+//  Modals
+#reveal-modal {
+  a.close {
+    color: #666666;
+    right: 15px;
+    top: 15px;
+    border: none;
+    outline: 0;
+    text-decoration: none;
+    z-index: 1;
+  }
+
+  .modal-content {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding: 30px 0;
+  }
+
+  .modal-dialog {
+    background: #f8f8f9;
+    border-radius: 0px;
+    box-shadow: rgba(0,0,0,0.5) 0 5px 15px;
+    padding: 10px 30px 20px;
+  }
+
+  .modal-header {
+    padding: 20px 0 0;
+    position: relative;
+
+    h3 {
+      padding-bottom: 30px;
+    }
+  }
+
+  .modal-body {
+    padding: 0;
+
+    h1,
+    h2 {
+      @include font-size(30px);
+      font-family: $font-primary;
+    }
+
+    ul {
+      list-style-position: inside;
+      margin-bottom: 0;
+    }
+
+    p {
+      line-height: em(22);
+      margin: 0 0 15px;
+    }
+  }
+
+  // Styles modal for Onboarding - DC and Wellvolution Videos
+  $video-border: 5px;
+  $video-width: 640px;
+  $video-height: 360px;
+
+  .customer_contracts.video {
+    .modal-dialog {
+      margin-top: 30px;
+      padding: $video-border;
+      width: $video-width + $video-border*2;
+
+      a.close {
+        color: #ffffff;
+        right: 0;
+        top: -30px;
+      }
+
+      .modal-body {
+        height: $video-height;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Tooltip
+
+.tooltip {
+  &.in {
+    opacity: 1.0;
+  }
+
+  &.top {
+    .tooltip-arrow {
+      border-top-color: #f7f7f7;
+    }
+  }
+
+  .tooltip-inner {
+    box-shadow: rgba(0,0,0, 0.4) 0px 1px 1px 1px;
+    color: $color-default-font;
+    background: #f7f7f7;
+    max-width: 300px;
+    padding: 12px;
+  }
+}

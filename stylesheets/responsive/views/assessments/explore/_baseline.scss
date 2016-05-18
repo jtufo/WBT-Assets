@@ -1,0 +1,46 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.assessments.explore {
+    $mural-shown: 0.45;
+    #assessment-explore-baseline {
+      .domain-score-container {
+        .domain-score-graph {
+          float: none;
+          margin-bottom: 112px;
+        }
+      }
+
+      .domain-description {
+        div[id*="domain-"] {
+          height: auto;
+          width: auto;
+        }
+      }
+
+      #content {
+        .row:last-child {
+          position: relative;
+          top: -100px;
+
+          .col-sm-6 {
+            float: left;
+            left: 10px;
+            top: 50px;
+
+            &:last-child {
+              float: none;
+              left: -10px;
+              top: 15px;
+
+              a.actions {
+                color: $color-link;
+                position: absolute;
+                top: -25px;
+                right: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

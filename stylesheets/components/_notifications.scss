@@ -1,0 +1,39 @@
+body.notifications.index {
+  .new-alerts-box {
+    border: $border-notification;
+    color: $color-green;
+    font: {
+      family: $font-primary-medium;
+      size: 14px;
+    }
+    padding: 12px 0;
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+
+    .alert-count {
+      font: {
+        family: Arial, sans-serif;
+        size: 37px;
+        weight: bold;
+      }
+      padding-right: 8px;
+      vertical-align: middle;
+    }
+  }
+
+  .notification-table {
+    margin-top: 10px;
+
+    .date {
+      text-align: right;
+    }
+
+    tbody {
+      .date {
+        font-style: italic;
+      }
+    }
+  }
+}

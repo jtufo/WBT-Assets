@@ -1,0 +1,37 @@
+@media only screen and (max-width: $screen-xs-max) {
+  .ScalingForm {
+    label {
+      margin-bottom: 10px;
+    }
+    
+    &--nps {
+      padding: 20px 15px;
+
+      .nps-exit {
+        right: 5px;
+        top: 5px;
+      }
+
+      .rating-label {
+        &.least {
+          left: 10px;
+          top: -17px;
+        }
+
+        &.most {
+          bottom: -7px;
+          right: 10px;
+          top: inherit;
+        }
+      }
+
+      .question-input {
+        width: 100%;
+      }
+
+      .btn-send-comment {
+        margin-top: 20px;
+      }
+    }
+  }
+}

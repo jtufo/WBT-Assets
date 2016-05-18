@@ -1,0 +1,64 @@
+footer {
+  bottom: 0;
+  color: #ffffff;
+  left: 0;
+  min-height: 1px;
+  padding: 300px 0 0 0;
+  position: absolute;
+  width: 100%;
+
+  .footer-wrapper {
+    @include font-size(12px);
+    background: {
+      color: #443f58;
+      image: image-url("application/backgrounds/copyright-bg.png");
+      repeat: repeat-x;
+      position: center top;
+    }
+    font-family: Arial, sans-serif;
+    padding: 40px 50px;
+  }
+
+  a {
+    color: #ffffff;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  .footer-text {
+    padding-right: 110px;
+    width: 750px;
+  }
+
+  .footer-logo {
+    float: right;
+  }
+
+  .contract-copyright {
+    margin-top: 15px;
+  }
+
+  .copyright {
+    position: relative;
+
+    .myh-logo {
+      display: inline-block;
+      a {
+        display: block;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+#footer_space {
+  height: 210px; // Fallback - Height will be replaced by sticky-footer js
+}

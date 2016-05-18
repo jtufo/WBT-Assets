@@ -1,0 +1,67 @@
+$color-blue-button: $color-blue-dark;
+$color-orange-button: $color-orange;
+
+.Button {
+  @include font-size(18px);
+  border: 0;
+  border-radius: 0;
+  color: #ffffff;
+  display: block;
+  font-weight: bold;
+  margin-top: 30px;
+  outline: 0;
+  padding: {
+    top: 18px;
+    bottom: 16px;
+  }
+  text: {
+    align: center;
+    decoration: none;
+    transform: uppercase;
+  }
+  transition: 0.3s;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  &.is-disabled,
+  &.is-secondary {
+    opacity: 0.6;
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// Colors
+
+.Button--blue {
+  background-color: $color-blue-button;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-blue-button, 5%);
+  }
+}
+
+.Button--orange {
+  background-color: $color-orange-button;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-orange-button, 5%);
+  }
+}
+
+// Sizes
+.Button--small {
+  @include font-size(15px);
+  padding: 16px 0 14px;
+}

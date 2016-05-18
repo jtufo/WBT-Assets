@@ -1,0 +1,23 @@
+@mixin css3-pie {
+  behavior: asset-url("PIE.htc"); // CSS3 Fix for older versions of IE
+}
+
+@mixin ie8-zindex-fix {
+  z-index: 3;
+}
+
+@mixin ie-background-cover($bg-image) {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{image-path($bg-image)}', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='#{image-path($bg-image)}', sizingMethod='scale')";
+}
+
+@mixin ie-background-size-polyfill {
+  -ms-behavior: asset-url("polyfills/backgroundsize.htc");
+}
+
+// Mixin to turn of filter gradient in IE7-8
+
+@mixin no-ie-filter {
+  filter: none;
+  -ms-filer: none;
+}

@@ -1,0 +1,55 @@
+body {
+  .inner-wrap {
+    background: {
+      image: image-url("application/backgrounds/bg-mountains-footer.png");
+      repeat: repeat-x;
+      position: center bottom;
+    }
+    min-height: 100%;
+    position: relative;
+  }
+
+  .page-container {
+    margin-top: $page-container-padding;
+
+    &-inner {
+      @include inner-container;
+    }
+  }
+
+  .page-header {
+    background: $color-off-white;
+    padding: 54px 0 32px;
+    position: relative;
+    text-align: center;
+
+    &-inner {
+      @include inner-container;
+    }
+
+    .sub-heading {
+      color: $color-purple;
+      font-size: 13px;
+      padding: 5px 0 10px;
+      text-transform: uppercase;
+    }
+
+    p {
+      @include font-size(21px);
+      color: $color-purple-dark;
+      font-family: $font-primary;
+      margin: 10px 0 0;
+      padding-bottom: 20px;
+    }
+
+    .header-link {
+      @include font-size(16px);
+      color: $color-gray-dark;
+      text-decoration: underline;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+body.passwords {
+  .page-container-inner {
+    @include inner-container(6);
+  }
+}
+
+body.sessions.new,
+body.passwords {
+  $session-col-padding: 50px;
+
+  .page-header {
+    background: #ffffff;
+    padding-bottom: 0;
+  }
+
+  .page-header-support {
+    @include font-size(15px);
+    color: #777777;
+    font: {
+      family: $font-secondary;
+      style: italic;
+    }
+    line-height: 1.8em;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .col-myh-signin {
+    padding: 84px $session-col-padding 0 0;
+  }
+
+  .col-wbt-signin {
+    border-left: 2px solid #efefef;
+    padding: 0 0 30px $session-col-padding;
+
+    &::before {
+      background: $color-off-white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 12px #ffffff;
+      font: {
+        family: Arial, sans-serif;
+        style: italic;
+        weight: bold;
+      }
+      content: "or";
+      color: $color-gray;
+      display: block;
+      height: $or-box-size;
+      left: -($or-box-size/2);
+      line-height: $or-box-size;
+      position: absolute;
+      text-align: center;
+      top: 40%;
+      width: $or-box-size;
+    }
+  }
+}

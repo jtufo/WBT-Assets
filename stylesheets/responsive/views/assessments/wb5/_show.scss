@@ -1,0 +1,124 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.assessments.show {
+    $assessment-padding: 20px;
+
+    .page-header {
+      padding-top: 28px;
+    }
+
+    #progress {
+      #percent-completed {
+        right: -25px;
+        top: -6px;
+      }
+    }
+
+    .progress-container {
+      padding: 15px 0px 20px;
+    }
+
+    .autosave-container {
+      bottom: -18px;
+    }
+
+    .wb5-gallup-logo {
+      top: -78px;
+      width: 95px;
+    }
+
+    #wb5 {
+      margin-top: -$page-container-padding-mobile;
+
+      #wb5-assessment {
+        border: none;
+      }
+
+      #wb5-question {
+        margin: 0 20px;
+        padding: 0 12px;
+      }
+
+      .questions-container {
+        min-height: 55px;
+        padding: 2px 0;
+      }
+
+      .answers {
+        margin: $assessment-padding 0 0;
+        padding-bottom: 100px;
+      }
+
+      button {
+        &#wb5-question-next {
+          bottom: 0;
+        }
+
+        &#finish {
+          bottom: 35px;
+          height: auto;
+        }
+      }
+
+      button#skip,
+      button#back {
+        font-size: 26px;
+        padding: 0 5%;
+        top: 15px;
+      }
+
+      select,
+      label.radio-label,
+      label.checkbox-label,
+      input[type="number"] {
+        margin-right: 0;
+        min-width: 100% !important;
+        width: 100%;
+      }
+
+      label.radio-label,
+      label.checkbox-label {
+        padding-top: 14px;
+      }
+
+      input[type="number"] {
+        margin-bottom: 30px;
+      }
+
+      #wb5-assessment {
+        p {
+          font-size: 14px;
+
+          &.header + .question {
+            font-size: 15px;
+          }
+        }
+      }
+
+      $multiline-radio: 396, 397, 718, 739, 820, 1769;
+
+      @each $answer in $multiline-radio {
+        label.radio-label[for="answer_#{$answer}"] {
+          $mobile-offset-label: 12px;
+          border-left: $mobile-offset-label solid #ffffff;
+          border-radius: 0;
+          padding-left: 45px - 10;
+
+          input {
+            left: -$mobile-offset-label;
+          }
+        }
+      }
+    }
+
+    .modal-content {
+      padding: 15px;
+    }
+
+    // Last question
+    #question_829 {
+      .answers {
+        padding-bottom: 80px;
+      }
+    }
+  }
+}

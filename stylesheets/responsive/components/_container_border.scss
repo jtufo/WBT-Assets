@@ -1,0 +1,15 @@
+@media only screen and (max-width: $screen-xs-max) {
+  .BorderedContainer {
+    border-width: 2px;
+    padding: {
+      bottom: 25px;
+      top: 30px;
+    }
+
+    &--feedbacks {
+      &::before {
+        background-size: 38%;
+      }
+    }
+  }
+}

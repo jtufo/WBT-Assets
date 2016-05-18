@@ -1,0 +1,95 @@
+// Start - WBA customization variables. The defaults are set in the Assessment gem.
+$wba-brand-color: $color-purple;
+
+$wba-domain-title-margin: 0 0 1em 0;
+$wba-domain-title-size: 1em;
+$wba-domain-title-color: $color-purple;
+$wba-question-color: #4e3724;
+$wba-question-header-size: 18px;
+$wba-question-size: 20px;
+
+$wba-label-size: em(17);
+$wba-label-border: none;
+$wba-label-supertext-font: $font-primary-bold;
+$wba-label-supertext-color: #826731;
+
+// End - WBA customization variables
+
+body.assessments.show {
+  // Rather than `require`ing this dependency in our manifest file, we are `@import`ing it directly into the right spot.
+  // This allows us to completely namespace all CSS related to the assessment.
+  // Because of this, we must explicitly require jquery-ui/button in application.css.
+  @import "assessment-frontend/wba";
+
+  #wba {
+    padding: 20px 0;
+
+    ul#wba-frame {
+      overflow: visible;
+
+      > li {
+        transition: all 0.45s ease-in-out;
+      }
+      
+      label{
+        $label-bg-top: #e5f4fe;
+        $label-bg-btm: #bad4e5;
+        background: {
+          color: $label-bg-btm; // For older versions of IE
+          image: linear-gradient(to bottom, $label-bg-top 0%, $label-bg-btm 100%);
+        }
+        box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0, rgba(255, 255, 255, 0.5) 0 0 0 1px inset;
+        font-weight: bold;
+        &:hover{
+          background-image: linear-gradient(to bottom, darken($label-bg-top, 5%) 0%, darken($label-bg-btm, 15%) 100%) !important;
+        }
+      }
+    }
+
+    #question_6844297570,
+    #question_6850373010 {
+      .answers-dropdown {
+        width: 400px !important;
+
+        select {
+          width: 470px !important;
+        }
+      }
+    }
+
+    .wba-question-header {
+      @include font-size($wba-question-size);
+    }
+
+    .question-cont {
+      .wba-question {
+        @include font-size($wba-question-header-size);
+      }
+    }
+
+    .ui-button-text {
+      @include font-size(16px);
+    }
+
+    .button-right {
+      margin-right: 25px;
+
+      .button {
+        @extend .btn-flat-purple;
+        line-height: normal;
+
+        .button-inner {
+          background-image: none;
+          font: {
+            family: inherit;
+            size: inherit;
+          }
+          height: auto;
+          line-height: 24px;
+          padding: 0;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}

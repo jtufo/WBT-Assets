@@ -1,0 +1,114 @@
+body.accounts.index {
+  $user-info-icon: 100px;
+  $user-info-padding: 8px;
+
+  .page-header {
+    $accounts-header-size: 285px;
+    @include page-header-bg(
+      $height: $accounts-header-size,
+      $image-name: striped,
+      $stripe-color: $color-blue-dark
+    );
+    padding-bottom: $accounts-header-size + 115;
+  }
+
+  .page-header-secondary {
+    background: $color-blue-dark;
+    padding: 80px 0 25px;
+
+    &-inner {
+      @include inner-container;
+    }
+
+    p {
+      @include font-size(20px);
+    }
+  }
+
+  .dc-account-welcome {
+    color: #ffffff;
+    text-align: center;
+
+    h2 {
+      color: #ffffff;
+    }
+  }
+
+  .dc-account-img {
+    @include size(570px, 401px);
+    background: image-url("application/accounts/dc-connection-screenshot.png");
+    position: absolute;
+    top: -425px;
+    z-index: 1;
+  }
+
+  .wbt-account-welcome {
+    p {
+      @include font-size(18px);
+      padding-right: 60px;
+    }
+  }
+
+  .user-info {
+    margin: 20px 0 15px;
+  }
+
+  .user-info-centered {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .user-info-img,
+  .user-info-data {
+    float: left;
+    background: #ffffff;
+  }
+
+  .user-info-img {
+    border-radius: 50% 0 0 50%;
+    padding: $user-info-padding;
+
+    img {
+      @include size($user-info-icon);
+      border-radius: 50%;
+    }
+  }
+
+  .user-info-data {
+    line-height: em(21);
+    height: $user-info-icon + ($user-info-padding*2);
+    padding: 15px 25px 37px;
+    text-align: left;
+
+    .user-name {
+      @include font-size(18px);
+      color: $color-purple;
+      text-transform: uppercase;
+    }
+  }
+
+  .user-not-me {
+    bottom: 14px;
+    color: $color-default-font;
+    left: 140px;
+    position: absolute;
+    text-decoration: underline;
+  }
+}
+
+#reveal-modal {
+  .accounts.modal-container.show {
+    .modal-dialog {
+      width: 810px;
+    }
+
+    .modal-body {
+      padding: 0;
+    }
+  }
+}
+
+iframe[name="account_external_authorization"] {
+  @include size(748px, 413px);
+}

@@ -1,0 +1,22 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.about.index {
+    .page-header {
+      margin-bottom: 0;
+    }
+    
+    .page-header-inner {
+      .freemium-header-img {
+        margin-bottom: 0;
+      }
+    }
+
+    .freemium-box {
+      padding: 20px 0 15px;
+
+      img {
+        margin-top: 10px;
+        max-width: 70%;
+      }
+    }
+  }
+}

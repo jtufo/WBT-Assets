@@ -1,0 +1,48 @@
+.feedbacks-header {
+  background: #ffffff;
+  color: $color-purple;
+  margin: 30px 0 55px;
+  padding: 4%;
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  &::before {
+    @include size(0);
+    border: {
+      left: 10px solid transparent;
+      right: 10px solid transparent;
+      top: 15px solid #ffffff;
+    }
+    bottom: -15px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 2;
+  }
+
+  p {
+    .page-header & {
+      @include font-size(16px);
+      margin: 0 0 5px;
+      padding: 0;
+
+      a {
+        color: $color-purple;
+        text-decoration: underline;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  h1 {
+    @include font-size(28px);
+  }
+
+  .button-retake {
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,6 @@
+body.programs {
+  .page-header-inner,
+  .page-container-inner {
+    @include inner-container(8);
+  }
+}

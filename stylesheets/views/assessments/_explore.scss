@@ -1,0 +1,121 @@
+body.assessments.explore {
+  $domain-colors: (
+    "wba3": (
+      "colors": #bf311a #5a5276 #ed8228 #abb832 #89cbdf #807060,
+      "offset": 0
+    ),
+    "wb5": (
+      "colors": #ce5353 #dd801b #76c15d #55a1ce #5b5787,
+      "offset": 1
+    )
+  );
+
+  // Domain Navigation
+  .domain-description > div {
+    display: none;
+  }
+
+  .domain-title {
+    @include font-size(40px);
+    font-family: $font-primary-medium;
+  }
+
+  @each $assessment, $config in $domain-colors {
+    $colors: map-get($config, "colors");
+
+    .assessment-#{$assessment} {
+      @for $i from 0 to length($colors) {
+        .domain-status ul li:nth-child(#{length($colors)}n+#{$i + 1}) a {
+          background-color: transparentize(nth($colors, $i + 1), .65%);
+          border-bottom-color: nth($colors, $i + 1);
+        }
+
+        .domain-score-container.domain-#{$i} {
+          background-position: -233px*($i + map-get($config, "offset")) 0;
+          background-image: none;
+        }
+
+        .domain-title.domain-#{$i} {
+          color: nth($colors, $i + 1);
+        }
+
+        .domain-score-graph .other-score.score-me.domain-#{$i} {
+          color: nth($colors, $i + 1);
+        }
+      }
+    }
+  }
+
+  .page-container {
+    margin-top: 0;
+  }
+
+  .domain-status {
+    margin-bottom: 20px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    ul {
+      display: table-row;
+      margin: 0;
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: table-cell;
+        background-color: #fff;
+        padding-left: 3px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        a {
+          border-bottom: {
+            width: 5px;
+            style: solid;
+          }
+          color: #222222;
+          display: block;
+          height: 50px;
+          padding-top: 12px;
+          text-align: center;
+          transition: border-bottom-width 0.5s ease-out;
+
+          &.is-active {
+            border-bottom-width: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .explore-skip {
+    @include font-size(16px);
+    font: {
+      family: $font-secondary;
+      style: italic;
+    }
+    line-height: 2em;
+    margin-top: 12px;
+    text: {
+      align: center;
+      decoration: underline;
+    }
+
+    a {
+      color: $color-blue-dark;
+    }
+  }
+
+  #retake-assessment {
+    p {
+      padding-bottom: 0;
+    }
+
+    ~ #assessment-explore-baseline, ~ #assessment-explore-resample {
+      margin-top: 50px;
+    }
+  }
+}

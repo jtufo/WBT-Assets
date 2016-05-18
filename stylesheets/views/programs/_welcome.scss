@@ -1,0 +1,107 @@
+body.programs.welcome {
+  $journey: now, today, future;
+
+  .page-container {
+    margin-top: 158px;
+
+    .page-container-inner {
+      @include inner-container(12);
+    }
+  }
+
+  .programs-welcome-header {
+    margin-bottom: -72px;
+  }
+
+  @keyframes trail-start {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    10% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 2000;
+    }
+  }
+
+  .hide-trail-start {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: trail-start 4.5s linear forwards;
+  }
+
+  .trail-animation {
+    @include absolute-center(758px);
+    top: -92px;
+    z-index: -1;
+  }
+
+  .journey-row {
+    &.top {
+      padding-bottom: 122px;
+
+      .journey-icon,
+      .journey-content {
+        padding-left: 0;
+      }
+
+      h3 {
+        width: 92%;
+      }
+
+      h3,
+      p {
+        background: #ffffff;
+        padding-left: 15px;
+      }
+    }
+
+    &.middle {
+      padding-bottom: 118px;
+    }
+
+    &.bottom {
+      .journey-icon {
+        background: none;
+      }
+    }
+  }
+
+  .journey-icon {
+    background: #ffffff;
+
+    .icon {
+      background: {
+        color: #6e6d84;
+        position: center;
+        repeat: no-repeat;
+        size: 64%;
+      }
+      border-radius: 100%;
+      float: right;
+      padding: 4.1em;
+
+      @each $time in $journey {
+        &.#{$time} {
+          background-image: image-url("application/icons/svg/icon-#{$time}.svg")
+        }
+      }
+    }
+  }
+
+  .journey-content {
+    p {
+      background: #ffffff;
+      margin-top: 0;
+    }
+
+    a {
+      @include font-size(16px);
+    }
+  }
+
+  .actions-row {
+    margin-top: 35px;
+  }
+}

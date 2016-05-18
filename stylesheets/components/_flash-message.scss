@@ -1,0 +1,116 @@
+.flash {
+  $icon-size: 44px;
+  $flash-list: alert $color-red-light $color-red-dark, notice $color-green-dark $color-green-darker, info $color-teal $color-teal-dark;
+
+  box-sizing: border-box;
+  margin-top: 25px;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 250;
+
+  .flash-inner {
+    @include font-size(24px);
+    background-color: #f1f1f1 !important;
+    border: 1px solid #c8c8c8;
+    border-radius: 0;
+    box-shadow: rgba(0, 0, 0, .45) 0px 0px 9px 0px;
+    font-family: $font-primary-bold;
+    min-height: 65px;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+
+    > i {
+      @include css3-pie;
+      @include font-size(25px);
+      @include size($icon-size);
+      background: #ffffff;
+      border-radius: 200px;
+      box-shadow: #828282 0px 1px 0px 0px inset;
+      color: #ffffff;
+      left: 95px;
+      position: absolute;
+      z-index: 15;
+
+      &:before {
+        position: absolute;
+        top: 10px;
+        margin-left: -($icon-size/2);
+        left: 50%;
+        text-align: center; // Centers Icon in IE8
+        width: $icon-size;
+      }
+    }
+
+    .flash-message {
+      background: none !important;
+      border: none !important;
+      line-height: normal;
+      margin: 0 183px;
+      padding: 20px 18px 15px 26px;
+      text-align: center;
+
+      a.help {
+        @include font-size(12px);
+        background-color: $color-red-light;
+        border: 3px solid #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
+        color: #fff;
+        display: block;
+        margin-top: -18px;
+        padding: 5px 20px;
+        position: absolute;
+        text-decoration: none;
+        top: 50%;
+        right: 50px;
+      }
+
+      a.close {
+        @include font-size(13px);
+        color: #333333;
+        position: relative;
+        right: -183px;
+        top: -11px;
+      }
+    }
+
+    .flash-arrow {
+      @include size(75px, 100%);
+      border: {
+        bottom: none !important;
+        left: none !important;
+        right: none !important;
+      }
+      box-sizing: content-box;
+      left: 80px;
+      position: absolute;
+      top: -1px;
+    }
+  }
+
+   // This function is for each flash message state. It uses the variable list, $flash-list, to set
+   // each item in the list. This is so we could use a variable inside another variable.
+
+   // nth($state, 1) uses the first option in the $flash-list,
+   // nth($state, 2) uses the 2nd option in the $flash-list
+
+  @each $state in $flash-list {
+    &.is-#{nth($state, 1)} {
+      .flash-inner {
+        color: nth($state, 2);
+        i {
+          &:before {
+            color: nth($state, 2);
+          }
+        }
+        .flash-arrow {
+          background-image: linear-gradient(to top, nth($state, 3) 30%, nth($state, 2) 100%);
+          border-top: 2px solid nth($state, 3);
+        }
+      }
+    }
+  }
+}

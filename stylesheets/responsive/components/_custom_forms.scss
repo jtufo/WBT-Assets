@@ -1,0 +1,19 @@
+@media only screen and (max-width: $screen-xs-max) {
+  form.custom {
+    .form-group {
+      .select-date {
+        .select-date-col {
+          padding-left: 5px;
+        }
+      }
+      input[type="checkbox"] {
+        &:checked {
+          &:before {
+            @include font-size(47px);
+            left: -5px;
+          }
+        }
+      }
+    }
+  }
+}

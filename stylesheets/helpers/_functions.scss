@@ -1,0 +1,10 @@
+// Convert px to rem
+@function rem($size) {
+  $remSize: $size / $font-size-base;
+  @return #{$remSize}rem;
+}
+
+// Convert px to em
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}

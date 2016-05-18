@@ -1,0 +1,117 @@
+@media only screen and (max-width: $screen-sm-max){
+  body {
+    $spacing-nav: 17px;
+    $width-nav: 175px;
+    padding: 0;
+
+    // Shows Responsive Menu
+    &.responsive-nav {
+      #mobile-menu {
+        i:before {
+          border-radius: 2px;
+        }
+      }
+
+      .Nav-container {
+        display: block; // Show Nav
+        right: 0;
+        top: $height-header-responsive;
+      }
+    }
+
+    // Hides and Styles Responsive Menu
+    #mobile-menu {
+      position: absolute;
+      right: 15px;
+      text-shadow: 0 1px 0 #1a2b35;
+      top: ($height-header-responsive/2)-($height-mobile-menu/2);
+
+      a {
+        color: #ffffff;
+      }
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    // Nav
+    .Nav-container {
+      @include size($width-nav, 100%);
+      display: none; // Hide Nav
+      position: absolute;
+      z-index: 10;
+    }
+
+    // Main Nav
+    .Nav {
+      @include size(100%, auto);
+      background: $color-gray-dark;
+      float: none;
+      margin: 0;
+      padding: 0;
+
+      .Nav-item {
+        display: block;
+
+        .Nav-item-link {
+          border: {
+            bottom: 1px solid $color-user-nav-hover;
+            right: 0;
+          }
+          margin: 0;
+          padding: 15px;
+
+          &:hover {
+            background: $color-user-nav-hover;
+          }
+        }
+
+        .Nav-item-text {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    // User Nav
+    .user-nav {
+      .Nav:before {
+        display: none;
+      }
+
+      .dropdown-menu {
+        border-top: 0;
+        box-shadow: none;
+        display: block;
+        left: 0;
+        margin: 0;
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+
+        &-arrow {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Styles med breaking point for navigation from 767px to 992px;
+@media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  body {
+    &.responsive-nav {
+      .Nav-container {
+        top: 80px;
+      }
+    }
+
+    .inner-wrap {
+      #mobile-menu {
+        top: ($height-header/2)-($height-mobile-menu/2);
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body {
+    header {
+      @include size(100%, auto !important);
+      background: {
+        position-y: bottom;
+        size: contain;
+      }
+
+      .header-wrap {
+        height: $height-header-responsive;
+
+        .wbt-logo {
+          $wbt-logo-width: 45px;
+          @include size($wbt-logo-width, 45px);
+          background-image: image-url('application/logos/wbt-logo-mobile.png');
+          left: 50%;
+          margin-left: -$wbt-logo-width / 2;
+          z-index: 5;
+        }
+
+        .contract-partner-header {
+          margin-top: 5px;
+        }
+
+        .contract-logo {
+          @include size(98px, 33px);
+          background-size: cover;
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  body.customer_contracts.show {
+    header {
+      background-size: auto;
+      padding-bottom: 10px;
+
+      .header-wrap {
+        height: auto;
+
+        .contract-logo {
+          @include size(80%, auto);
+        }
+      }
+    }
+  }
+}

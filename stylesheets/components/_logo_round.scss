@@ -1,0 +1,24 @@
+.Circle-logo {
+  @include ie-background-size-polyfill;
+  background: {
+    color: #fff;
+    position: center center;
+    repeat: no-repeat;
+    size: 83%;
+  }
+  border-radius: 50%;
+
+  .background-size-polyfill {
+    border-radius: 50%; // FOR IE POLYFILL
+  }
+}
+
+.Circle-logo--border {
+  @extend .Circle-logo;
+  border: 8px solid $color-off-white;
+}
+
+.Circle-logo--shadow {
+  @extend .Circle-logo;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+}

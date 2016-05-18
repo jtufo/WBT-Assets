@@ -1,0 +1,39 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.feedbacks.results {
+    .top-risk {
+      .readiness-img {
+        margin-bottom: 20px;
+        text-align: center;
+
+        img {
+          max-width: 70%;
+        }
+      }
+
+      .readiness-response {
+        padding-right: 0;
+      }
+    }
+
+    .other-risks {
+      .readiness-response {
+        width: 100%;
+      }
+
+      div[class*="-risk"] {
+        border-bottom: 1px solid $color-gray-lightest;
+        margin-bottom: 30px;
+      }
+    }
+
+    .explore-other-programs {
+      p {
+        margin-top: 1em;
+      }
+
+      .btn-programs {
+        width: 100%;
+      }
+    }
+  }
+}

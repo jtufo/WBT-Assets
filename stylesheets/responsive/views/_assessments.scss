@@ -1,0 +1,231 @@
+@media only screen and (max-width: $screen-xs-max) {
+
+  body.assessments {
+    &.show {
+      #wba {
+        margin: {
+          bottom: 60px;
+          top: 0;
+        }
+        padding: $padding-mobile;
+        width: 100%;
+
+        h2#current-domain {
+          margin-bottom: 10px;
+        }
+
+        .progress-bar {
+          display: inline-block;
+          float: right;
+          margin: 0 auto;
+          width: 90%;
+        }
+
+        a#wba-back {
+          @include sprite_image($icons, wba-mobile-arrow);
+          display: inline-block !important;
+          margin-top: -3px;
+          position: static;
+
+          &:hover {
+            @include sprite_image($icons, wba-mobile-arrow);
+          }
+
+          i {
+            display: none;
+            background: none;
+            color: $color-purple;
+            font-size: 34px;
+            margin-top: 0;
+            padding: 0;
+            position: static;
+          }
+        }
+
+        ul#wba-frame {
+          min-height: 90px;
+          padding: 20px 0 0;
+          width: 100% !important;
+
+          p.question {
+            @include font-size(16px);
+            line-height: normal;
+          }
+
+          label:first-child {
+            .ui-button-text {
+              .superText {
+                bottom: 0;
+                left: 0;
+                top: -30px;
+              }
+            }
+          }
+
+          label {
+            margin-bottom: 8px;
+            width: 100%;
+
+            .ui-button-text {
+              line-height: normal;
+              padding: 6px 8px 6px 30px;
+              text-align: left;
+
+              .superText {
+                bottom: -75px;
+                left: 0;
+                top: inherit;
+              }
+            }
+
+            .ui-icon-radio {
+              margin-left: 2px;
+            }
+          }
+
+          .answers {
+            width: 100% !important;
+            margin: 50px auto 20px !important;
+
+            input {
+              width: 60px;
+            }
+
+            .column.even,
+            .column.odd {
+              margin: 0;
+              padding: 3px;
+              width: 100%;
+
+              .question-followup {
+                padding-left: 10px;
+                .answers {
+                  margin: 0 0 20px;
+                  width: 100%;
+
+                  label {
+                    margin-right: 5px;
+                    width: 55px;
+
+                    .ui-button-text {
+                      padding-left: 25px;
+                    }
+                  }
+
+                  label:nth-last-of-type(1) {
+                    margin-right: 0;
+                    width: 100px;
+
+                    .ui-button-text {
+                      padding-right: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .answers-dropdown {
+            @include size(98px !important, auto);
+            background: {
+              color: #d3e6f3;
+              image: image-url("assessment/mobile-wba-dropdown.png");
+              position: right center;
+              repeat: no-repeat;
+              size: 10% !important;
+            }
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px 0, rgba(255, 255, 255, 0.5) 0 0 0 1px inset;
+
+            select {
+              line-height: normal !important;
+            }
+          }
+        }
+
+        .button-right {
+          margin-right: 0;
+
+          .wba-next {
+            margin-right: 0;
+          }
+        }
+
+        div.question {
+          padding: 0 20px;
+        }
+      }
+    }
+
+    &.new {
+      .section-content {
+        background: none;
+        padding: {
+          bottom: $padding-mobile;
+          right: 10px;
+        }
+      }
+
+      form#new_assessment {
+        background: none;
+
+        .btn-flat-purple {
+          width: 100%;
+        }
+      }
+    }
+
+    &.progress {
+      .section-header {
+        box-shadow: none;
+        text-align: left;
+
+        h2 {
+          @include font-size(18px);
+          margin-bottom: 0;
+        }
+
+        p {
+          @include font-size(15px);
+          margin: 0;
+        }
+      }
+
+      #mural-container {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .mural {
+        margin: 5px 0 50px 40px;
+
+        ul#mural-titles {
+          li {
+            .complete {
+              display: none;
+            }
+
+            .domain-title {
+              @include font-size(16px);
+            }
+
+            form#new_assessment {
+              display: none !important;
+            }
+          }
+        }
+      }
+
+      form#new_assessment {
+        float: right;
+        display: block;
+        margin-right: 15px;
+        text-align: right;
+      }
+
+      p.skip {
+        margin: 30px 0 15px 15px;
+      }
+    }
+  }
+}

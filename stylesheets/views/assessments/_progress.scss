@@ -1,0 +1,44 @@
+// WBA customization variables. The defaults are set in the Assessment gem. Place before asset-frontend/* import
+$wba-brand-color: $color-purple;
+$wba-sec-title-font: $font-primary;
+$wba-sec-title-size: 32px;
+$wba-mural-domain-title-border-color: #35667f;
+// End - WBA customization variables
+
+body.assessments.progress {
+  // Rather than `require`ing this dependency in our manifest file, we are `@import`ing it directly into the right spot.
+  // This allows us to completely namespace all CSS related to the assessment.
+  // Because of this, we must explicitly require jquery.ui.button in application.css.
+  @import "assessment-frontend/progress";
+
+  form#new_assessment {
+    display: none;
+
+    .btn_next {
+      input {
+        text-transform: none;
+      }
+    }
+  }
+
+  .wba-status-section{
+    .wba-section-header{
+      .wba-sec-title{
+        @include font-size($wba-sec-title-size);
+      }
+    }
+  }
+
+  .wba-sec-sub-title {
+    @include font-size(16px);
+  }
+
+  .section-footer {
+    text-align: right;
+  }
+
+  .skip {
+    @include font-size(13px);
+    margin-top: 0;
+  }
+}

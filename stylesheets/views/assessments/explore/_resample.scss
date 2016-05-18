@@ -1,0 +1,153 @@
+body.assessments.explore {
+  $comparison-colors: #3d647d you, #666 sex, #aa5db8 age;
+  
+  #assessment-explore-resample {
+    .domain-score-header {
+      @include clearfix;
+      margin: 60px 0;
+
+      .my-graph {
+        @include size(224px, 300px);
+        position: relative;
+
+        #my-graph {
+          @include sprite_image($icons, explore-my-score-my-graph-bg);
+        }
+
+        .other-score {
+          background: {
+            position: top left;
+            repeat: no-repeat;
+          }
+          font-size: 16px;
+          position: absolute;
+          text: {
+            transform: uppercase;
+            align: center;
+          }
+          width: 100%;
+
+          span {
+            display: inline-block;
+            font: {
+              family: $font-secondary;
+              size: 30px;
+            }
+
+            .no-score {
+              font-size: 20px;
+            }
+          }
+
+          &.score-me {
+            background: {
+              image: image-url('assessment/explore-my-score-my-graph-line-me.png');
+              position: bottom center;
+            }
+            color: #3d647d;
+            padding-bottom: 46px;
+            top: 58px;
+
+            span {
+              @include font-size(68px);
+              display: block;
+              line-height: 75px;
+              width: auto;
+            }
+
+            .no-score {
+              font-size: 52px;
+            }
+          }
+
+
+          &.score-original {
+            background: {
+              image: image-url('assessment/explore-my-score-my-graph-line-original.png');
+              position: top center;
+            }
+            color: #5a95ba;
+            padding-top: 36px;
+            top: 212px;
+
+            i {
+              @include font-size(14px);
+              color: #999;
+              font-style: normal;
+            }
+          }
+        }
+      }
+    }
+
+    .comparison-graph-container {
+      .comparison-graph {
+        @include size(100%, 275px);
+        margin-top: 15px;
+      }
+
+      .highcharts-tooltip > span > div {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 5px;
+        color: #fff;
+        font-size: 24px;
+        padding: 3px 5px;
+      }
+
+      .series {
+        margin: 30px 0;
+        text-align: right;
+
+        > div {
+          display: inline-block;
+          margin-left: 25px;
+
+          &:before {
+            @include size(12px);
+            border-radius: 2px;
+            content: "";
+            display: block;
+            float: left;
+            margin: 4px 10px 0 0;
+          }
+
+          @each $comparison in $comparison-colors {
+            &.series-#{nth($comparison, 2)} {
+              &:before {
+                background-color: nth($comparison, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .domain-score-content {
+      margin: 60px 0;
+
+      .domain-description {
+        padding-right: 25px;
+
+        .domain-title {
+          b {
+            display: block;
+            font: {
+              family: $font-secondary;
+              size: 90px;
+            }
+            line-height: 90px;
+            margin-bottom: 20px;
+          }
+        }
+
+        p {
+          font: {
+            family: $font-primary;
+            size: 16px;
+          }
+          line-height: 1.2em;
+        }
+      }
+    }
+  }
+}

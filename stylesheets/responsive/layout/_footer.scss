@@ -1,0 +1,33 @@
+@media only screen and (max-width: $screen-xs-max) {
+  footer {
+    padding-top: 105px;
+    text-align: left;
+
+    .footer-wrapper {
+      padding: 30px 0;
+
+      .footer-text {
+        padding: 0;
+        width: 100%
+      }
+    }
+
+    .footer-logo {
+      float: none;
+      margin: 15px auto 0;
+    }
+
+    .copyright,
+    .contract-block {
+      .footer-logo {
+        float: none;
+        margin: 20px auto 0;
+        width: 90px;
+      }
+
+      .myh-logo {
+        background-size: cover;
+      }
+    }
+  }
+}

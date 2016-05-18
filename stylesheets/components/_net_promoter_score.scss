@@ -1,0 +1,151 @@
+.ScalingForm {
+  $net-radio-border: 3px;
+  width: 100%;
+  z-index: 999;
+
+  // Form Elements
+  label {
+    display: inline-block;
+    font-family: $font-secondary;
+    margin: 0 5px;
+    padding: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    span.score {
+      $radio-size: 52;
+      @include font-size(18px);
+      background: #ffffff;
+      border: 3px solid #b8bfc2;
+      border-radius: 50%;
+      color: #605f64;
+      cursor: pointer;
+      display: block;
+      height: em($radio-size);
+      line-height: em($radio-size);
+      text-align: center;
+      transition: 0.5s ease all;
+      width: em($radio-size);
+    }
+  }
+
+  input[type="radio"] {
+    @extend .visually-hidden;
+
+    &:checked + span.score {
+      background: $color-purple-light;
+      border-color: $color-purple-light;
+      color: #ffffff;
+    }
+
+    + span.score {
+      &:hover {
+        background: $color-purple-light;
+        border-color: $color-purple-light;
+        color: #ffffff;
+      }
+    }
+  }
+
+  // NPS
+  &--nps {
+    background: #d4dcdf;
+    bottom: 0;
+    left: 0;
+    padding: 54px 0;
+    position: fixed;
+
+
+    .nps-exit {
+      @include font-size(25px);
+      color: #9ca8ac;
+      cursor: pointer;
+      position: absolute;
+      right: 2%;
+      top: 16px;
+    }
+
+    .nps-response {
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    .nps-form {
+      &-question {
+        position: relative;
+      }
+
+      &-reason {
+        .response-title {
+          margin-right: 5px;
+        }
+      }
+
+      textarea {
+        @include font-size(16px);
+        border: 0;
+        font-family: $font-primary-medium;
+        min-height: 110px;
+        padding: 15px 20px;
+
+        &::placeholder {
+          color: #888888;
+        }
+
+        &.is-disabled {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    .response,
+    .question {
+      @include font-size(21px);
+      color: #444057;
+      font-family: $font-primary-medium;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .response-title {
+      @include font-size(19px);
+      font: {
+        family: $font-secondary;
+        style: italic;
+      }
+    }
+
+    .rating-label {
+      @include font-size(12px);
+      color: #5c6c71;
+      font-weight: bold;
+      position: absolute;
+      top: 45%;
+      text-transform: uppercase;
+
+      &.most {
+        right: -100px;
+      }
+
+      &.least {
+        left: -100px;
+      }
+    }
+
+    .question-input {
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+      width: 74%;
+    }
+
+    .btn-send-comment {
+      margin-top: 0;
+    }
+  }
+}

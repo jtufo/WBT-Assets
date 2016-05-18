@@ -1,0 +1,169 @@
+body.assessments.new {
+  // Self Rating Assessment New
+  &.self-rating {
+    .page-header {
+      h1 {
+        line-height: normal;
+        margin-top: 8px;
+      }
+
+      .well-being-scale {
+        margin: 30px 0;
+      }
+    }
+
+    .assessment-scale-img {
+      margin-bottom: 20px;
+    }
+
+    .assessment-result-banner {
+      $banner-border: 4px;
+      border: $banner-border solid #eaeff1;
+      margin: -($page-container-padding + $banner-border) 16px 25px 16px;
+      padding: $page-container-padding 25px 20px;
+      text-align: center;
+
+      img {
+        margin-bottom: 25px;
+      }
+
+      p {
+        margin: 8px 0px;
+      }
+
+      .not-alone {
+        @extend .subheader;
+      }
+
+      .other-people {
+        @include font-size(22px);
+        color: $color-purple;
+        font-family: $font-primary;
+        line-height: normal;
+      }
+
+      .keep-going {
+        font: {
+          family: $font-secondary;
+          size: 14px;
+          style: italic;
+        }
+      }
+    }
+
+    .assessment-result-content {
+      padding-left: 20px;
+    }
+  }
+
+  // WB5 Assessment New
+  &.wb5-new {
+    .page-header {
+      $start-header-size: 210px;
+      @include page-header-bg(
+        $height: $start-header-size,
+        $image-name: striped
+      );
+      padding-bottom: $start-header-size + 140;
+    }
+
+    .page-header-inner {
+      h1 + p {
+        @include font-size(20px);
+        margin-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .start-wb5-img {
+      $wb5-img-width: 495px;
+      @include size($wb5-img-width, 375px);
+      @include absolute-center($wb5-img-width);
+      bottom: -400px;
+
+      &:lang(en) {
+        background: image-url("assessment/start-wb5.png") no-repeat;
+      }
+      &:lang(es) {
+        background: image-url("assessment/start-wb5-es.png") no-repeat;
+      }
+    }
+
+    .start-wb5-img-no-labels {
+      $wb5-img-width: 495px;
+      @include size($wb5-img-width, 375px);
+      @include absolute-center($wb5-img-width);
+      bottom: -400px;
+      background: image-url("assessment/start-wb5-no-labels.png") no-repeat;
+    }
+  }
+
+  #wba3 {
+    .section-content {
+      background: {
+        image: image-url("start-assessment.png");
+        position: center bottom;
+        repeat: no-repeat;
+      }
+      margin-bottom: 30px;
+      padding-bottom: 300px;
+    }
+
+    h6 {
+      @include font-size(22px);
+      color: #333;
+      margin: 0;
+    }
+
+    .skip {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  #wb5 {
+    text-align: center;
+
+    p {
+      @include font-size(20px);
+    }
+
+    .content-row {
+      margin-top: 30px;
+    }
+
+    .gallup-logo {
+      margin-top: -30px;
+      position: absolute;
+      right: -90px;
+      top: -35px;
+    }
+
+    .actions-row-bottom {
+      @include font-size(20px);
+      font-weight: bold;
+
+      form {
+        input {
+          background: none;
+          border: none;
+          color: $color-link;
+        }
+      }
+    }
+  }
+
+  .skip-or-change-language-row {
+    a {
+      @include font-size(16px);
+      color: $color-gray-dark;
+      text-decoration: underline;
+    }
+
+    .skip-assessment {
+      border-left: 1px solid $color-gray-dark;
+      margin-left: 10px;
+      padding-left: 10px;
+    }
+  }
+}

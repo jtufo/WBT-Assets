@@ -1,0 +1,17 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.sessions.new.devise,
+  body.passwords.new.devise {
+    .page-container {
+      margin-top: 40px;
+    }
+
+    .col-wbt-signin,
+    .col-myh-signin {
+      padding: 0 15px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

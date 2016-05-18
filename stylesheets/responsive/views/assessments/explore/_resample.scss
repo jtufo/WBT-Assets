@@ -1,0 +1,36 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.assessments.explore {
+    .domain-status {
+      ul {
+        display: block;
+        li {
+          float: left;
+          padding: 0;
+          width: 50%;
+
+          a {
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+
+    #assessment-explore-resample {
+      .domain-score-header,
+      .domain-score-content {
+        margin: 0;
+      }
+
+      .comparison-graph-container {
+        .series {
+          text-align: center;
+
+          > div {
+            margin-left: 10px;
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}

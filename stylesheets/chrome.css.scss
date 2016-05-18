@@ -1,0 +1,223 @@
+@import "font-awesome";
+@import "helpers/variables";
+@import "mixins/**/*";
+
+$chrome-height: 230px;
+$chrome-border: 1px;
+$chrome-outer-border: 3px;
+$chrome-bg: #363636;
+$chrome-nav-icon-bg: #523824;
+$chrome-nav-width: 127px;
+$chrome-border-stitched: dashed #797979;
+$chrome-panel-width: 53px;
+$chrome-panel-radius: 400px 0 0 400px;
+
+#skylight-chrome,
+#skylight-chrome-panel {
+  background: image-url('application/backgrounds/wbt-header.gif') repeat;
+}
+
+#skylight-chrome {
+  @include size(558px, 230px);
+  background-color: $chrome-bg;
+  border: $chrome-border $chrome-border-stitched {
+    radius: 0 0 0 4px;
+    right: none;
+  }
+  box: {
+    shadow: 0 0 0 $chrome-outer-border $chrome-bg;
+    sizing: border-box;
+  }
+  position: fixed;
+  right: -561px;
+  top: 150px;
+  z-index: 100;
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box; // Important for MYH apps that don't apply border-box by default
+  }
+
+  // Chrome Panel
+  #skylight-chrome-panel {
+    @include size($chrome-panel-width, 48px);
+    background-color: $chrome-bg;
+    border: {
+      bottom: $chrome-border $chrome-border-stitched;
+      left: $chrome-border $chrome-border-stitched;
+      top: $chrome-border $chrome-border-stitched;
+    }
+    border-radius: $chrome-panel-radius;
+    left: -$chrome-panel-width;
+    position: absolute;
+    top: -$chrome-border;
+    z-index: 101;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &::before {
+      @include size($chrome-panel-width, 54px);
+      background: image-url('application/logos/chrome-wbt.png') no-repeat 5px center;
+      border: 3px solid $chrome-bg;
+      border-radius: $chrome-panel-radius;
+      border-right: 0;
+      content: '';
+      left: -4px;
+      position: absolute;
+      top: -4px;
+    }
+
+    .unread-notification-count {
+      left: -13px;
+      top: -7px;
+    }
+  }
+
+  // Chrome Nav
+  #skylight-chrome-navigation {
+    float: left;
+    padding-left: 15px;
+    position: relative;
+    width: 127px;
+    z-index: 102;
+
+    ul.user-nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      li {
+        &:first-child {
+          a {
+            padding-top: 16px;
+          }
+        }
+
+        &:last-child {
+          a {
+            border-bottom: 0;
+          }
+        }
+
+        a {
+          border-bottom: 1px solid #565657;
+          color: #fff;
+          display: block;
+          font: $font-nav;
+          letter-spacing: $nav-letter-space;
+          padding: 13px 0;
+          text: {
+            decoration: none;
+            transform: uppercase;
+          }
+          width: 100%;
+
+          &:hover {
+            border-bottom-color: #7d7d7d;
+            text-decoration: none;
+          }
+        }     
+      }
+    }
+
+    .unread-notification-count {
+      right: 14px;
+      top: 12px;
+    }
+  }
+
+  // Chrome Notifications List
+  #skylight-chrome-notifications {
+    background: #fff;
+    border-radius: 12px 0 0 12px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    float: left;
+    margin: 5px 0px;
+    height: ($chrome-height - 11px);
+    overflow: auto;
+    width: calc(100% - #{$chrome-nav-width});
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        border-bottom: 1px solid #cccccc;
+        padding: 15px 25px;
+
+        a {
+          text-decoration: none !important;
+          color: inherit !important;
+        }
+
+        &.unread {
+          background: #f4f4f4;
+        }
+
+        p {
+          font: {
+            family: Arial, sans-serif;
+            size: 15px;
+          }
+          margin-top: 0;
+        }
+
+        .timestamp {
+          color: $color-purple;
+          font: {
+            size: 14px;
+            style: italic;
+          }
+          margin-top: -10px;
+
+          i {
+            margin-right: 5px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  // Events
+  #skylight-chrome-panel {
+    .unread-notification-count {
+      display: none;
+    }
+  }
+
+  &.open {
+    #skylight-chrome-panel .unread-notification-count {
+      display: none !important;
+    }
+
+    #skylight-chrome-notification .unread-notification-count {
+      display: inline;
+    }
+  }
+
+  // Unread Icon
+  .unread-notification-count {
+    @include size(22px);
+    background: $color-purple;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 0 #000000;
+    color: #fff;
+    display: none;
+    font: {
+      family: $font-secondary;
+      size: 10px;
+      weight: bold;
+    }
+    line-height: 19px;
+    position: absolute;
+    text-align: center;
+  }
+}

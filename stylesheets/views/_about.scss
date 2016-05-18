@@ -1,0 +1,67 @@
+body.about {
+  &.index {
+    $image-offset: 156px;
+    .page-header {
+      @include page-header-bg;
+      margin-bottom: $image-offset;
+    }
+
+    .page-header-inner {
+      p {
+        margin-top: 0;
+      }
+
+      .freemium-header-img {
+        margin: 15px 0 (-$image-offset) 0;
+      }
+    }
+
+    .freemium-intro-row {
+      margin-bottom: 45px;
+      text-align: center;
+    }
+
+    .freemium-box {
+      @include clearfix;
+      border-bottom: 1px solid $color-gray-light;
+      margin: 0 10%;
+      padding: 45px 0;
+      width: 80%;
+
+      &.last-freemium {
+        border-bottom: none;
+      }
+
+      > div {
+        padding: 0;
+      }
+
+      p {
+        @include font-size(17px);
+      }
+    }
+
+    .freemium-content-img {
+      text-align: center;
+    }
+
+    .actions-row {
+      text-align: center;
+
+      .btn-join-now {
+        margin: {
+          left: auto;
+          right: auto;
+        }
+        width: 260px;
+      }
+
+      .sign-in-link {
+        @include font-size(16px);
+        font-family: $font-primary-medium;
+        color: $color-gray-dark;
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,366 @@
+@font-face {
+  font-family: "Raleway SemiBold";
+  src: url(data:font/opentype;charset=utf-8;base64,<%= Base64.strict_encode64(File.read(Rails.root.join("app", "assets", "fonts", "raleway", "raleway-semibold.otf"))) %>) format("truetype");
+  src: url(data:font/truetype;charset=utf-8;base64,<%= Base64.strict_encode64(File.read(Rails.root.join("app", "assets", "fonts", "raleway", "raleway-semibold.woff"))) %>) format("woff");
+}
+
+@font-face {
+  font-family: "Raleway Regular";
+  src: url(data:font/opentype;charset=utf-8;base64,<%= Base64.strict_encode64(File.read(Rails.root.join("app", "assets", "fonts", "raleway", "raleway-regular.otf"))) %>) format("truetype");
+  src: url(data:font/truetype;charset=utf-8;base64,<%= Base64.strict_encode64(File.read(Rails.root.join("app", "assets", "fonts", "raleway", "raleway-regular.woff"))) %>) format("woff");
+}
+
+#report-pdf {
+  $color-blue: #469abc;
+  $color-gray: #dfdfdf;
+  $color-purple: #52507a;
+  $font-size-page: 17px;
+  $header-color: #666666;
+  $margin-left-section: 155px;
+  $media-padding: 35px;
+
+  // Global Layout
+  .page {
+    font: {
+      family: 'Raleway Regular', sans-serif;
+      size: $font-size-page;
+    }
+    page-break-after: always;
+  }
+
+  .page-header {
+    @extend .clearfix;
+    border-bottom: 1px solid $color-gray;
+    color: $header-color;
+    font: {
+      family: 'Raleway SemiBold', sans-serif;
+      size: 12px;
+    }
+    margin-bottom: 70px;
+    padding: 30px 0 10px;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+
+    .wbt-logo {
+      $width: 110px;
+      background: #ffffff;
+      height: 100px;
+      left: 50%;
+      margin-left: -($width/2);
+      position: absolute;
+      text-align: center;
+      top: 10px;
+      width: $width;
+    }
+
+    a {
+      color: $header-color;
+      text-decoration: none;
+    }
+  }
+
+  .body-header {
+    margin-bottom: 40px;
+  }
+
+  .body-content {
+    @extend .clearfix;
+  }
+
+  // Views
+  #welcome {
+    background: #433e5c;
+    height: 100%;
+    position: relative;
+
+    h1 {
+      color: #ffffff;
+      font-size: 48px;
+    }
+
+    h2 {
+      color: #90d0e2;
+      font-size: 28px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .date {
+      color: #c6c6c6;
+      font: {
+        family: Arial, sans-serif;
+        size: 14px;
+        weight: bold;
+      }
+      text-transform: uppercase;
+    }
+
+    .page {
+      height: 100%;
+    }
+
+    .welcome-logo {
+      margin: 80px 0 50px;
+      width: 28%;
+    }
+  }
+
+  #intro,
+  #questions_notes {
+    .body-header {
+      margin-bottom: 0;
+    }
+  }
+
+  #intro {
+    h2 {
+      margin-bottom: 0;
+    }
+
+    ul {
+      li {
+        padding-bottom: 3px;
+      }
+    }
+  }
+
+  #questions_notes {
+    .page {
+      page-break-after: auto; // Removes extra blank page at end of PDF
+    }
+
+    .body_header {
+      p {
+        padding: {
+          left: 70px;
+          right: 70px;
+        }
+      }
+    }
+
+    ul.notes-list {
+      li {
+        border-bottom: 1px solid $color-gray;
+        margin: 0 10px;
+        padding: 28px 0;
+      }
+    }
+  }
+
+  #myh_products {
+    .body-content {
+      margin-right: 30px;
+    }
+
+    .product-logo {
+      $logo-size: 120px;
+      border: 3px solid #f0f0f0;
+      border-radius: 50%;
+      height: $logo-size;
+      line-height: $logo-size;
+      text-align: center;
+      width: $logo-size;
+
+      img {
+        height: auto;
+        max-width: 80%;
+        vertical-align: middle;
+
+        &.hello_200 {
+          max-width: 55%;
+        }
+      }
+    }
+
+    .product-content {
+      h2 {
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 18px;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  #summary {
+    hr {
+      border: 0;
+      border-top: 2px solid #ebeeef;
+      margin: 40px auto;
+      width: 30%;
+    }
+
+    .column {
+      float: left;
+      padding: 0 5%;
+      width: 23%;
+    }
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      li {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  // Base
+  ol,
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .no-break:before {
+    clear: both;
+  }
+
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  // Typography
+  p {
+    line-height: 23px;
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: $color-purple;
+    font: {
+      size: 30px;
+      weight: normal;
+    }
+    margin: 20px 0;
+  }
+
+  h2 {
+    color: $color-blue;
+    font: {
+      family: 'Raleway SemiBold', sans-serif;
+      size: 19px;
+    }
+    margin: 0 0 16px;
+  }
+
+  h3 {
+    font: {
+      family: 'Raleway SemiBold', sans-serif;
+      size: $font-size-page;
+    }
+    margin: 35px 0 12px;
+  }
+
+  a {
+    color: $color-purple;
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  // Components
+  .media {
+    @extend .clearfix;
+    margin-left: -127px;
+    padding: 0;
+    position: relative;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &-left {
+      float: left;
+      margin-right: 27px;
+    }
+
+    &-body {
+      display: table-cell;
+      padding-bottom: $media-padding;
+      width: 100%;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .media--border {
+    padding: $media-padding 0 0;
+
+    + .media::before {
+      border-top: 2px solid #ebeeef;
+      content: "";
+      display: block;
+      left: 129px;
+      position: absolute;
+      top: 0px;
+      width: 30%
+    }
+  }
+
+  // Utilities
+  .clearfix {
+    &::before,
+    &::after {
+      content: "";
+      display: table;
+    }
+    &::after {
+      clear: both;
+    }
+  }
+
+  .u-bold {
+    font-family: 'Raleway SemiBold', sans-serif;
+  }
+
+  .u-align-c {
+    text-align: center;
+  }
+
+  .u-align-l {
+    text-align: left;
+  }
+
+  .u-pull-left {
+    float: left;
+  }
+
+  .u-pull-right {
+    float: right;
+  }
+
+  .u-page-indent {
+    margin: {
+      left: $margin-left-section;
+      right: 65px;
+    }
+  }
+}
+
+@media print {
+  #report-pdf {
+    .media--border:nth-child(3n) {
+      page-break-after: always;
+
+      + .media::before {
+        border-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,213 @@
+body.assessments.explore {
+  $comparison-bg: #89cbdf;
+  #assessment-explore-baseline {
+
+    .domain-score-row {
+      display: none;
+      margin-top: 80px;
+    }
+
+    .wellbeing-score {
+      margin: 0 auto;
+      text-align: center;
+
+      &:lang(en) {
+        @include sprite_image($icons, my-score-badge);
+      }
+      &:lang(es) {
+        @include sprite_image($icons, my-score-badge-es);
+      }
+    }
+
+    .compare-intro {
+      @include font-size(18px);
+      color: #3f7e90;
+      padding: 12px 0px 6px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .comparison-header {
+      @include font-size(21px);
+      border-bottom: 3px solid $color-gray-lightest;
+      color: $color-blue-dark;
+      font: {
+        family: $font-secondary;
+        style: italic;
+      }
+      padding-bottom: 16px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .comparison-box {
+      border-right: 3px solid $color-gray-lightest;
+      font-family: $font-secondary;
+      float: left;
+      text-align: center;
+      width: 50%;
+
+      &:last-child {
+        border: none;
+      }
+
+      .score-label {
+        @include font-size(16px);
+        border-radius: 0 0 0 $border-radius-default;
+        color: #888889;
+        font-style: italic;
+        padding: 10px;
+        text-transform: lowercase;
+      }
+
+      &:last-child {
+        .compared-to-others {
+          border-radius: 0 $border-radius-default 0 0;
+        }
+
+        .score-label {
+          border-radius: 0 0 $border-radius-default 0;
+        }
+      }
+    }
+
+    .my-score {
+      color: #497b8f;
+      font: {
+        family: $font-secondary;
+        size: 72px;
+      }
+      float: none;
+      line-height: em(36);
+
+      &.compared-to-others {
+        color: $color-purple-light;
+        line-height: normal;
+        margin-top: 18px;
+      }
+
+      .no-score {
+        font-size: 46px;
+        line-height: 163px;
+      }
+    }
+
+    .domain-description {
+      > div {
+        .wellbeing-score-intro {
+          @include size(208px, auto);
+          left: 400px;
+          position: absolute;
+          top: 0;
+
+          .learn-more {
+            position: absolute;
+            bottom: -65px;
+            right: -28px;
+
+            &:lang(en) {
+              @include sprite_image($icons, explore-my-score-learn-more);
+            }
+            &:lang(es) {
+              @include sprite_image($icons, explore-my-score-learn-more-es);
+            }
+          }
+        }
+      }
+
+      div[id*="domain-"] {
+        height: 400px;
+        width: 450px;
+      }
+    }
+
+    .domain-score-container {
+      .domain-score-graph {
+        display: none;
+        float: right;
+        margin: {
+          right: 0;
+          top: 0;
+        }
+        position: relative;
+        width: 270px;
+
+        #domain-score-graph {
+          @include sprite_image($icons, explore-my-score-graph-bg);
+        }
+
+        .other-score {
+          position: absolute;
+          font-size: 16px;
+          text-transform: uppercase;
+          width: 190px;
+          background: {
+            position: top left;
+            repeat: no-repeat;
+          }
+
+          span {
+            @include font-size(25px);
+            display: inline-block;
+            font-family: $font-secondary;
+          }
+
+          &.score-me {
+            background: {
+              image: image-url('assessment/explore-my-score-graph-line-me.png');
+              position: bottom center;
+            }
+            padding-bottom: 46px;
+            top: 85px;
+            width: 100%;
+            text-align: center;
+
+            span {
+              @include font-size(68px);
+              width: auto;
+              line-height: 75px;
+              display: block;
+            }
+
+            .no-score {
+              font-size: 52px;
+            }
+          }
+
+          &.other-sex {
+            background-image: image-url('assessment/explore-my-score-graph-line-sex.png');
+            left: 110px;
+            top: 254px;
+            padding-top: 46px;
+            padding-left: 4px;
+            color: $color-green;
+          }
+
+          &.other-age {
+            background-image: image-url('assessment/explore-my-score-graph-line-age.png');
+            left: 85px;
+            top: 224px;
+            padding-top: 115px;
+            padding-left: 4px;
+            color: #5fa0b4;
+          }
+        }
+      }
+
+      .domain-score-content {
+        margin: {
+          left: 0;
+          top: 40px;
+        }
+
+        .domain-description {
+          p {
+            @include font-size(21px);
+            font-family: $font-primary;
+            line-height: 1.3em;
+          }
+        }
+      }
+    }
+  }
+}

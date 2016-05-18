@@ -1,0 +1,98 @@
+// ==========================================================================
+// This stylesheet contains custom form elements.
+// ==========================================================================
+
+form.custom {
+  .form-group {
+    .select-date {
+      @include clearfix;
+      .select-date-col {
+        float: left;
+        padding-left: 14px;
+        width: 33.3333%;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        select {
+          width: 100%;
+        }
+      }
+    }
+
+    select {
+      // #TODO: The way the custom background arrow is currently setup leaves a lot to be desired
+      // #      No support for < IE10: shows custom background arrow AND browser select arrow
+      @include appearance(none);
+      &::-ms-expand {
+        // Hide browser dropdown arrow in IE10
+        display: none;
+      }
+      background: {
+        color: #fff;
+        image: image-url('onboarding/dropdown-arrow.png');
+        position: 95% center;
+        repeat: no-repeat;
+      }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      @include appearance(none);
+      background-color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      float: none;
+      margin: -4px 15px 0 0;
+      vertical-align: middle;
+    }
+
+    input[type="checkbox"] {
+      @include size(33px);
+      border: 3px solid $color-gray-light;
+      border-radius: 0;
+      margin-top: 0;
+
+      &:checked {
+        &:before {
+          @include font-size(28px);
+          background: image-url("application/settings/checkmark.png") no-repeat center center;
+          color: #000000;
+          content: "";
+          display: block;
+          font-weight: normal;
+          height: 100%;
+        }
+      }
+    }
+
+    input[type="radio"] {
+      @include box-shadow(0 0 0 3px $color-gray-light);
+      border: 3px solid #fff;
+      border-radius: 1000px;
+      min-width: 15px;
+      min-height: 15px;
+      position: relative;
+      transition: box-shadow ease-in-out 0.15s;
+
+      &:focus {
+        @include box-shadow(0 0 0 3px #afafaf);
+      }
+
+      &:checked {
+        background-color: $color-default-font;
+      }
+    }
+
+    .control-label {
+      text-align: left;
+    }
+  }
+
+  .radio-inline {
+    .field_with_errors {
+      display: inline;
+    }
+  }
+}

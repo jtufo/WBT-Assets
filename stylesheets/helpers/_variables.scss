@@ -1,0 +1,97 @@
+// Global Variables
+
+$border-forms: 3px solid;
+$border-notification: 1px solid #cccccc;
+$border-radius-default: 4px;
+$border-sections: 1px solid #eceded;
+
+$font-size-base: 16px;
+$font-primary: 'Raleway Medium', sans-serif;
+$font-primary-bold: 'Raleway Bold', sans-serif;
+$font-primary-medium: 'Raleway SemiBold', sans-serif;
+$font-secondary: Clarendon, "Times New Roman", Serif;
+$font-onboarding-bold: "Century Gothic Bold", sans-serif;
+$font-nav: normal 13px $font-primary-bold;
+
+$line-height: 1.375; // Based on 16px base
+
+$color-blue: #0074aa;
+$color-blue-light: #0095da;
+$color-blue-dark: #588fa5;
+$color-brown-dark: #3f3127;
+$color-brown-light: #6c4a31;
+$color-gray-lightest: #efefef;
+$color-gray-light: #dddddd;
+$color-gray: #7e7e7e;
+$color-gray-dark: #666666;
+$color-green: #86b82f;
+$color-green-dark: #88b23e;
+$color-green-darker: #759b31;
+$color-off-white: #ebeeef;
+$color-orange: #f5892b;
+$color-purple: #534e7b;
+$color-purple-light: desaturate(lighten($color-purple, 15), 1);
+$color-purple-dark: #58556c;
+$color-red-light: #cc3333;
+$color-red-dark: #bd3935;
+$color-tan: #c6bcac;
+$color-tan-dark: #826731;
+$color-teal: #4b9bbe;
+$color-teal-dark: #418bac;
+$color-yellow: #fdbf03;
+
+$height-form-input: 55px;
+
+$letter-spacing-global: 1.5px;
+
+$page-container-padding: 60px;
+$page-container-padding-mobile: $page-container-padding/2;
+$padding-cell: 1.25em;
+$padding-section: 25px;
+
+// Global Elements
+
+$color-heading: $color-purple;
+$color-default-font: $color-gray-dark;
+$color-link: $color-blue-dark;
+$font-size-btn: 0.875em;
+$height-header: 86px;
+$height-header-responsive: 42px;
+$height-mobile-menu: 27px;
+$padding-btn-y: 11px;
+$padding-btn-x: 25px;
+
+// Mobile
+
+$padding-mobile: 10px;
+$browser-context: 16; // Default
+
+$height-form-input-mobile: 35px;
+$mobile-border: 3px;
+$checkbox-indent: 30px;
+$checkbox-size: 14px;
+
+// Landing
+
+$down-symbol-size: 60px;
+
+// Navigation Variables
+
+$color-user-nav-hover: $color-gray;
+$color-nav-alert: $color-orange;
+$nav-letter-space: 0.6px;
+$nav-icon-size: 26px;
+$nav-icon-size-sm: $nav-icon-size - 10;
+$nav-icon-size-lg: $nav-icon-size + 10;
+
+// Programs
+
+$height-program-show: 620px;
+
+// Sessions
+
+$or-box-size: 40px;
+
+// Health Stress
+
+$health-risk-cat: stress, activity, diet, smoking;

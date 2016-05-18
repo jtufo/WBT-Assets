@@ -1,0 +1,25 @@
+$onboarding: spritely-map("onboarding/sprite/*.png", $spacing: 3px);
+
+$icons: spritely-map("application/icons/sprite/*.png", $spacing: 3px);
+
+@mixin sprite_image($sprite, $img-name, $display: block){
+  background: {
+    image: spritely-url($sprite);
+    position: spritely-position($sprite, $img-name);
+    repeat: no-repeat;
+  }
+  width: spritely-width($sprite, $img-name);
+  height: spritely-height($sprite, $img-name);
+  display: $display;
+}
+
+@mixin sprite_image_auto_size($sprite, $img-name, $display: block){
+  background: {
+    image: spritely-url($sprite);
+    position: spritely-position($sprite, $img-name);
+    repeat: no-repeat;
+  }
+  width: auto;
+  height: auto;
+  display: $display;
+}

@@ -1,0 +1,7 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.settings.show {
+    .col-offset-mobile {
+      margin-left: 8%;
+    }
+  }
+}

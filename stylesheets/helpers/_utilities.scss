@@ -1,0 +1,133 @@
+// ==========================================================================
+// This stylesheet contains utility classes - utility class applies a single rule or a very simple, universal pattern
+// ==========================================================================
+
+a.close {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  float: right;
+  padding: 0;
+  position: absolute;
+}
+
+.session-actions {
+  margin: 30px 0;
+
+  .close-link {
+    margin-right: 30px;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.align_r {
+  text-align: right;
+}
+
+.align_l {
+  text-align: left;
+}
+
+.align_c {
+  text-align: center;
+}
+
+#offscreen {
+  overflow: hidden;
+  text-indent: -9999px;
+  height: 0;
+}
+
+.responsive-img {
+  height: auto;
+  max-width: 100%;
+}
+
+.btn-full-width {
+  width: 100%;
+}
+
+// Hide visually, but have it available for screen readers: h5bp.com
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hide-text {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+.u-col-center {
+  float: none;
+  margin: 0 auto;
+}
+
+.u-row-eq-height {
+  display: flex;
+}
+
+.u-row-wrap {
+  flex-flow: wrap;
+
+  div[class*='col-'] {
+    margin: {
+      left: -0.4px; /* hack adjust for wrapping */
+      right: -0.4px;
+    }
+  }
+}
+
+.u-row-centered {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.u-vcenter-col {
+  display: inline-block;
+  float: none;
+  height: 100%;
+  margin-right: -4px;
+  vertical-align: middle;
+}
+
+// Removes Bootstrap Gutter
+.u-no-gutter {
+  padding: {
+    left: 0;
+    right:0;
+  }
+}
+
+@for $i from 1 through 8 {
+  .u-space-#{$i} {
+    margin-bottom: 6.25px * ($i * 1);
+  }
+}
+
+@for $i from 1 through 8 {
+  $space-default: 6.25px;
+  
+  .u-space-#{$i} {
+    margin-bottom: $space-default * ($i * 1);
+  }
+
+  .u-top-space-#{$i} {
+    margin-top: $space-default * ($i * 1);
+  }
+}

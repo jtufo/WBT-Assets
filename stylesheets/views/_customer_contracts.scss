@@ -1,0 +1,273 @@
+// ==========================================================================
+// This stylesheet contains sponsor specific "Stuff"
+// ==========================================================================
+
+body.customer_contracts.show {
+  $product_sections: wbt $color-purple, daily_challenge #fff, walkadoo #bf311a, quitnet #383838, quit4life #fff, hellowallet #fff, hello200 #9ca432, ramsey #fff;
+
+  #content {
+    margin: 0;
+    width: 100%;
+
+    .page-container-inner {
+      @include inner-container-full;
+    }
+  }
+
+  .inner-wrap {
+    background: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: $font-primary-bold;
+  }
+
+  h2,
+  h3 {
+    color: $color-blue-light;
+    margin: 0;
+  }
+
+  h2 {
+    @include font-size(32px);
+  }
+
+  h3 {
+    @include font-size(28px);
+  }
+
+  p {
+    @include font-size(18px);
+  }
+
+  a {
+    color: $color-blue-light;
+    text-decoration: underline;
+  }
+
+  .btn-ready {
+    color: #ffffff;
+    margin: 10px auto;
+    text-decoration: none;
+    width: 265px;
+  }
+
+  // Header
+  header {
+    background:{
+      color: #ffffff;
+      image: none;
+    }
+    height: 100% !important;
+    margin-bottom: 0;
+    padding: 20px 0;
+  }
+
+  .header-wrap {
+    background: none;
+    position: relative;
+
+    .wbt-logo {
+      display: none;
+    }
+
+    .contract-partner-header {
+      float: none;
+      margin: 0;
+    }
+
+    .contract-partner-copy {
+      display: none;
+    }
+
+    .contract-logo {
+      $strikethrough-width: 222px;
+      $strikethrough-position: -($strikethrough-width + 38);
+      @include size(255px, auto);
+      background-image: none;
+      float: none !important;
+      display: block;
+      margin: 0 auto;
+
+      &::after,
+      &::before {
+        border-top: 1px solid $color-gray-light;
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: $strikethrough-width;
+        z-index: 1;
+      }
+
+      &::after {
+        right: $strikethrough-position;
+      }
+
+      &::before {
+        left: $strikethrough-position;
+      }
+
+      img {
+        max-width: 100%;
+        position: static;
+      }
+    }
+  }
+
+  // Welcome
+  .hero {
+    background: {
+      color: #1794d2;
+      image: image-url("onboarding/wellvolution-bg-hero.gif");
+      repeat: no-repeat;
+      position: center;
+    }
+    color: #ffffff;
+    padding: 37px 0;
+    text-align: center;
+
+    h1 {
+      @include font-size(44px);
+      color: #ffffff;
+    }
+
+    p.intro {
+      padding: 0 25px;
+    }
+
+    .already-member {
+      font-style: italic;
+    }
+
+    a {
+      color: #ffffff;
+    }
+  }
+
+  // Programs
+  .programs-start,
+  .program {
+    padding: 50px 0;
+  }
+
+  .programs-start {
+    text-align: center;
+
+    p {
+      @include font-size(20px);
+      margin: 0;
+    }
+  }
+
+  .programs-sections {
+    .container {
+      margin: 0;
+    }
+  }
+
+  .program {
+    border-bottom: 1px solid $color-gray-lightest;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    &:nth-child(odd) {
+      .col-sm-6 {
+        & + .col-sm-6 {
+          margin-left: 0;
+        }
+      }
+
+      .product-img {
+        background-position: top right;
+      }
+
+      .by-myh-logo {
+        @include sprite_image($onboarding, by-myh-white);
+      }
+    }
+
+    &:nth-child(even) {
+      .col-sm-6 {
+        float: right;
+        & + .col-sm-6 {
+          float: left;
+          margin-right: 0;
+        }
+
+        .product-img {
+          background-position: top left;
+        }
+      }
+    }
+
+    p.get-started {
+      color: $color-blue-light;
+      font-weight: bold;
+    }
+
+    .product-img {
+      @include size(100%, 285px);
+      background: {
+        repeat: no-repeat;
+        size: contain;
+      }
+    }
+  }
+
+  @each $section in $product_sections {
+    ##{nth($section, 1)}-program {
+
+      .product-img {
+        background-image: image-url("onboarding/screen-img-#{nth($section, 1)}.png");
+      }
+    }
+  }
+
+  // Additional Programs
+  .programs-additional {
+    padding: 40px 0 0;
+
+    .programs-additional-list {
+      @include font-size(20px);
+      line-height: 1.7em;
+      list-style-position: inside;
+      padding-left: 0;
+    }
+  }
+
+  // Footer
+  footer {
+    padding: 100px 0 0 0;
+
+    a {
+      color: #ffffff;
+    }
+
+    .contract-copyright {
+      .footer-logo {
+        width: 80px;
+      }
+
+      .footer-text {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .contract-row {
+      .footer-logo {
+        width: 205px;
+      }
+    }
+  }
+}

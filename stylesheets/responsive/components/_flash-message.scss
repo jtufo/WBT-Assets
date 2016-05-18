@@ -1,0 +1,45 @@
+@media only screen and (max-width: $screen-xs-max) {
+
+  .flash {
+    margin-top: 5px;
+
+    .flash-inner {
+      font-size: 14px;
+      min-height: 50px;
+
+      > i {
+        @include size(30px);
+        left: 12px;
+        top: 8px;
+
+        &:before {
+          top: 8px;
+        }
+      }
+
+      .flash-arrow {
+        left: 10px;
+        width: 35px;
+      }
+
+      .flash-message {
+        margin: 0;
+        padding: 10px 10px 10px 50px;
+        right: 5px;
+        top: -8px;
+
+        a.close {
+          right: -5px;
+          top: -8px;
+        }
+
+        a.help {
+          margin: 0px auto 10px;
+          position: static;
+          width: 80%;
+        }
+      }
+    }
+  }
+
+}

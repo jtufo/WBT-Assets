@@ -1,0 +1,15 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.wbid_accounts {
+    &.failure {
+      .section-content {
+        padding: 20px;
+      }
+
+      .failure-icon {
+        @include size(100px);
+        background-size: 60%;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

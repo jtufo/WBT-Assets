@@ -1,0 +1,52 @@
+@mixin solid-button(
+  $size: default,
+  $btn-color: $color-purple,
+  $font-color: darken($btn-color, 25%),
+  $button-height: 40px
+) {
+  @include font-size(18px);
+  background: $btn-color;
+  border: none;
+  border-radius: $border-radius-default;
+  box-shadow: rgba(255,255,255,1) 0px 0px 0px 4px,rgba(0,0,0,0.2) 0px 0px 4px 4px;
+  color: $font-color !important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-primary-medium;
+  height: $button-height;
+  line-height: 24px;
+  padding: 8px 25px;
+  text: {
+    align: center;
+    decoration: none !important;
+  }
+  transition: all .1s ease-out;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+
+  @media only screen and (max-width: $screen-xs-max) {
+    margin: 15px 0;
+  }
+
+  input {
+    @extend .btn-global;
+  }
+
+  &.disabled,
+  &[disabled] {
+    opacity: 0.3;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &:active,
+  &:focus {
+    background: darken($btn-color, 5%);
+  }
+
+  a {
+    color: $font-color !important;
+    display: block;
+  }
+}

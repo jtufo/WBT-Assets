@@ -1,0 +1,191 @@
+body.assessments.congratulations {
+  .health-risks-header {
+    .based-on {
+      @include font-size(14px);
+    }
+
+    h4 {
+      font-family: $font-primary-medium;
+      margin-bottom: 35px;
+    }
+  }
+
+  .health-risk-improvements {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 5%;
+      vertical-align: top;
+      width: 174px;
+    }
+
+    .health-risk-icon {
+      position: relative;
+
+      @each $health-risk in $health-risk-cat {
+        &.#{$health-risk} {
+          .risk-progress {
+            background-image: image-url("application/assessment/congratulations/#{$health-risk}-risk-complete.png");
+          }
+        }
+      }
+
+      .risk-progress {
+        background: {
+          position: bottom center;
+          repeat: no-repeat;
+          size: 100%;
+        }
+        bottom: 0;
+        height: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        transition: height 0.6s ease-out;
+      }
+
+      .risk-progress-completion-stamp {
+        display: none;
+
+        &::before {
+          @include font-size(25px);
+          @include size(55px);
+          background: $color-purple;
+          border: 9px solid #ffffff;
+          border-radius: 50%;
+          bottom: 0;
+          color: #ffffff;
+          content: "\f00c";
+          font-family: FontAwesome;
+          line-height: 37px;
+          position: absolute;
+          right: 0;
+          opacity: .85;
+        }
+      }
+    }
+
+    .risk-icon-desc {
+      @include font-size(16px);
+      padding: 20px 9px;
+    }
+  }
+
+  .health-risks-content {
+    padding-left: 50px;
+
+    p {
+      @include font-size(20px);
+    }
+  }
+
+  .congratulations-bottom {
+    min-height: 350px;
+  }
+
+  .assessment-score-graph {
+    display: none;
+    margin: {
+      right: 0;
+      top: 0;
+    }
+    position: relative;
+
+    #assessment-score-graph {
+      $graph-size: 270px;
+      @include size($graph-size);
+      background: {
+        position: center center;
+        repeat: no-repeat;
+      }
+      position: relative;
+
+      &::after,
+      &::before {
+        border: 33px solid #eaeff1;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        z-index: -1;
+      }
+
+      &::after {
+        $graph-size-after: 186px;
+        @include size($graph-size-after);
+        @include absolute-center($graph-size-after);
+        margin-top: -($graph-size-after / 2);
+        top: 50%;
+      }
+
+      &::before {
+        @include size($graph-size);
+        left: 0;
+        top: 0;
+      }
+
+      &.single-no-score,
+      &.single-score {
+        &::after {
+          display: none;
+        }
+      }
+
+      @each $score-type in comparison, single-no, single {
+        &.#{$score-type}-score {
+          background-image: image-url("application/assessment/congratulations/#{$score-type}-score-bg.png");
+        }
+      }
+    }
+
+    .score {
+      @include font-size(16px);
+      background: {
+        position: top left;
+        repeat: no-repeat;
+      }
+      position: absolute;
+      text-transform: uppercase;
+      width: 190px;
+      z-index: 2;
+
+      span {
+        @include font-size(25px);
+        display: inline-block;
+        font-family: $font-secondary;
+      }
+
+      &.inner {
+        background-image: image-url('application/assessment/congratulations/score-inner-line.png');
+        left: 85px;
+        top: 243px;
+        padding-top: 98px;
+        padding-left: 50px;
+        color: #807c9a;
+      }
+
+      &.outer {
+        background-image: image-url('application/assessment/congratulations/score-outer-line.png');
+        left: 110px;
+        top: 210px;
+        padding-top: 102px;
+        padding-left: 26px;
+        color: #b0c9d3;
+      }
+
+      &.center {
+        width: 100%;
+        margin-top: 90px;
+        text-align: center;
+
+        .assessment-score {
+          font-size: 76px;
+          color: $color-blue-dark;
+        }
+      }
+    }
+  }
+}

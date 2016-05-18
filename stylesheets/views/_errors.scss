@@ -1,0 +1,173 @@
+body.errors {
+  @keyframes snow {
+    0% {
+      background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+    100% {
+      background-position: 500px 1000px, 400px 400px, 300px 300px;
+    }
+  }
+  background-color: #d1d5d8;
+
+  #content {
+    width: 100%;
+  }
+
+  .page-container-inner {
+    @include inner-container-full;
+  }
+
+  .inner-wrap {
+    background: none;
+  }
+
+  .ErrorContent {
+    margin: -40px auto -63px;
+    width: 1300px;
+    position: relative;
+    z-index: 5;
+
+    &-title,
+    &-message {
+      color: #57556b;
+      text-align: center;
+
+      a {
+        color: #57556b;
+        text-decoration: underline;
+      }
+    }
+
+    &-title {
+      margin: 30px 0 15px;
+    }
+
+    &-message {
+      position: relative;
+      z-index: 6;
+    }
+
+    &-code {
+      @include font-size(390px);
+      color: #6d6c7a;
+      font: {
+        family: 'Roboto Condensed', sans-serif;
+        weight: 700;
+      }
+      margin-left: 140px;
+      transform: skew(0deg, -5deg);
+
+      &::before {
+        background: #ffffff;
+        bottom: 124px;
+        content: "";
+        height: 25px;
+        position: absolute;
+        width: 565px;
+      }
+    }
+  }
+
+  .ErrorForeground {
+    @include clearfix;
+    position: relative;
+  }
+
+  .MountainsBg {
+    background: {
+      color: #e3e6e8;
+      image: image-url('application/errors/svg/mountains.svg');
+      position: 0px 165px;
+      repeat: repeat-x;
+      size: 1100px 412px;
+    }
+    height: 500px;
+    left: 0;
+    position: absolute;
+    top: -$page-container-padding;
+    width: 100%;
+    z-index: 2;
+  }
+
+  .FallingSnowBg {
+    background-image: image-url("application/errors/snow-set-1.png"), 
+      image-url("application/errors/snow-set-2.png"),
+      image-url("application/errors/snow-set-3.png");
+    animation: snow 20s linear infinite;
+    height: 70%;
+    left: 0;
+    position: absolute;
+    top: -$page-container-padding;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .Trees,
+  .Yeti,
+  .Path {
+    background: {
+      repeat: no-repeat;
+      size: 100%;
+    }
+    position: absolute;
+    z-index: 6;
+  }
+
+  .Trees--left {
+    background-image: image-url("application/errors/svg/trees-left.svg");
+    height: 400px;
+    left: 0;
+    top: -100px;
+    width: 625px;
+  }
+
+  .Trees--right {
+    background-image: image-url("application/errors/svg/trees-right.svg");
+    height: 168px;
+    right: 10px;
+    top: -220px;
+    width: 108px;
+  }
+
+  .Path {
+    background-image: image-url("application/errors/svg/path.svg");
+    bottom: -312px;
+    height: 439px;
+    right: 385px;
+    width: 550px;
+  }
+
+  .Yeti {
+    background-image: image-url("application/errors/svg/yeti.svg");
+    height: 448px;
+    right: 35px;
+    top: -310px;
+    width: 515px;
+  }
+
+  .SnowBg {
+    background: #ffffff;
+    bottom: -50px;
+    float: left;
+    height: 400px;
+    margin-top: -25px;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      background: #ffffff;
+      content: "";
+      height: 270px;
+      left: 0;
+      position: absolute;
+      top: -125px;
+      transform: skew(0deg, -5deg);
+      width: 100%;
+      z-index: 3;
+    }
+  }
+
+  footer {
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,169 @@
+@import "helpers/variables";
+@import "mixins/**/*";
+
+// Base
+.u-col-center {
+  float: none !important;
+}
+
+// Component - Container Border
+.BorderedContainer {
+  &--myh,
+  &--wbt,
+  &--noLogo,
+  &--feedbacks {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+div.radio-inline {
+  label {
+    width: 100%;
+  }
+}
+
+form.custom {
+  .form-group {
+    input[type="radio"] {
+      @include size(25px);
+
+      &:checked {
+        background: #ffffff;
+      }
+    }
+
+    select {
+      background-image: none;
+    }
+  }
+}
+
+.inner-wrap {
+  background-image: none !important;
+}
+
+header {
+  .header-wrap {
+    .wbt-logo {
+      @include ie-background-cover("application/logos/wbt-logo.png");
+      background-image: none;
+    }
+  }
+
+  .contract-partner-copy {
+    width: 120px;
+  }
+}
+
+// Programs - Welcome
+body.programs.welcome {
+  $journey: now, today, future;
+
+  .journey-row {
+    min-height: 240px;
+    padding-bottom: 60px !important;
+  }
+
+  .journey-icon {
+    margin-left: 15% !important;
+    width: 15%;
+
+    .icon {
+      @each $time in $journey {
+        &.#{$time} {
+          background-image: image-url("application/icons/icon-#{$time}.png")
+        }
+      }
+    }
+  }
+
+  .journey-content {
+    width: 50%;
+  }
+}
+
+// Page Footer
+footer {
+  .myh-logo {
+    width: 140px;
+  }
+}
+
+// Assessment
+body.assessments.show {
+  #wba {
+    .progress-bar {
+      behavior: none;
+
+      #progress {
+        behavior: none;
+      }
+    }
+
+    #wba-frame {
+      > li,
+      > li.previous {
+        display: none;
+      }
+
+      > li.current {
+        display: block;
+      }
+
+      label {
+        &.ui-button {
+          behavior: none;
+        }
+      }
+    }
+  }
+
+  #wb5 {
+    label.radio-label,
+    label.checkbox-label {
+      min-height: 20px;
+    }
+
+    input[type="radio"] {
+      background: none;
+      border: none;
+    }
+
+    select {
+      background: none;
+      padding: 10px 0 10px 10px;
+    }
+  }
+}
+
+body.assessments.explore {
+  .domain-score-container {
+    .domain-score-content {
+      background: #ffffff;
+    }
+  }
+}
+
+// Nav
+body.responsive-nav {
+  nav {
+    .arrow-up {
+      display: none;
+    }
+  }
+}
+
+// Fallback for SVG Icons
+.Nav {
+  $icon-list: alerts, programs, rewards, survey, account, signout, support;
+  @each $icon in $icon-list {
+    i.icon-#{$icon} {
+      background: {
+        image: image-url("application/icons/icon-#{$icon}.png");
+        position: center center;
+        repeat: no-repeat;
+      }
+    }
+  }
+}

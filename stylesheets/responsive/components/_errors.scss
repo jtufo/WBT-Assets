@@ -1,0 +1,28 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.errors {
+    #error-message {
+      &:after {
+        max-width: 100%;
+      }
+
+      max-width: 100%;
+      text-align: center;
+    }
+
+    &.server_error {
+      #error-message {
+        background-position-y: 280px;
+      }
+    }
+
+    &.not_found {
+      #error-message {
+        padding-right: 0;
+        min-height: 0;
+        background-position: bottom center;
+        padding-bottom: 381px;
+        margin-top: 8em;
+      }
+    }
+  }
+}

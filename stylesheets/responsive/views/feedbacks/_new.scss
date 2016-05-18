@@ -1,0 +1,38 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.feedbacks.new {
+    .container {
+      .page-header-inner,
+      .page-container-inner {
+        padding: 0 22px;
+      }
+    }
+
+    .progress-container {
+      margin-top: -45px;
+      padding: 0;
+
+      li {
+        $progress-space: 50px;
+        margin-right: $progress-space;
+
+        &::after {
+          padding-right: $progress-space;
+          right: -$progress-space;
+        }
+      }
+    }
+
+    .readiness-slider {
+      label {
+        padding: 12px;
+        width: 91%;
+      }
+
+      .slide {
+        h1 {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}

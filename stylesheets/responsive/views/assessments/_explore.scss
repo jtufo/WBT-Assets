@@ -1,0 +1,19 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.assessments.explore {
+    @for $i from 0 through 8 {
+      .domain-score-container.domain-#{$i} {
+        background-position: -115px*($i) 0;
+      }
+    }
+
+    #retake-assessment {
+      margin: -10px -15px 0;
+      padding: 20px 10px 10px;
+      position: static;
+
+      ~ #assessment-explore-baseline, ~ #assessment-explore-resample {
+        margin-top: 0;
+      }
+    }
+  }
+}

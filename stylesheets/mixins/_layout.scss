@@ -1,0 +1,64 @@
+@mixin inner-container($col-size: 10) {
+  $offset: (12 - $col-size) / 2;
+
+  @extend .col-sm-#{$col-size};
+  @extend .col-sm-offset-#{$offset};
+}
+
+@mixin inner-container-full {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+@mixin diagonal-stripes($color: #555, $size: 100px) {
+  $angle: to top left;
+  background-size: $size $size;
+  background-image: linear-gradient(
+    $angle, 
+    $color 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    $color 50%, 
+    $color 75%, 
+    transparent 75%, 
+    transparent
+  );
+}
+
+@mixin page-header-bg (
+  $height: 100%,
+  $image-name: mountains,
+  $stripe-color: #e3e7e9
+){
+  &::after {
+    background-position: bottom center;
+    bottom: 0;
+    content: "";
+    height: $height;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    @if $image-name == striped {
+      @include diagonal-stripes(
+        $stripe-color,
+        $size: 23px
+      );
+      background-color: darken($stripe-color, 3%);
+    }
+
+    @else {
+      background: {
+        image: image-url("application/backgrounds/bg-#{$image-name}-header.png");
+        repeat: repeat-x;
+      }
+    }
+  }
+
+  .page-header-inner {
+    position: relative;
+    z-index: 2;
+  }
+}

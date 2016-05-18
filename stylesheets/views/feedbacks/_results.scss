@@ -1,0 +1,111 @@
+body.feedbacks.results {
+  .readiness-response {
+    color: $color-blue-dark;
+    font: {
+      family: $font-primary-bold;
+      size: 13px;
+      weight: bold;
+    }
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+
+  // Top Health Risk
+  .top-risk {
+    text-align: left;
+
+    h5 {
+      @include font-size(26px);
+      font-family: $font-primary;
+      line-height: normal;
+      margin-bottom: 15px;
+    }
+
+    p {
+      @include font-size(20px);
+      margin: 0;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  // Other Health Risks
+  .other-risks {
+    div[class*="-risk"] {
+      margin-bottom: 45px;
+    }
+
+    .readiness-response,
+    .hr {
+      float: left;
+    }
+
+    .readiness-response {
+      margin: 0 8px 22px 0;
+      width: 52%;
+    }
+
+    .hr {
+      border-bottom: 3px solid $color-gray-lightest;
+      padding-top: 6px;
+      width: calc(100% - 53% - 8px);
+    }
+
+    .readiness-img-sm {
+      float: right;
+      width: 70%;
+    }
+  }
+
+  // Feedback list
+  ul {
+    padding: 18px 0 0;
+
+    li {
+      list-style: none;
+      padding: 0 42px 20px;
+      position: relative;
+
+      &::before {
+        $icon-size: 22px;
+        $icon-color: #becbd1;
+        @include size($icon-size);
+        border: 2px solid $icon-color;
+        border-radius: 50%;
+        color: $icon-color;
+        content: "\f054";
+        font: {
+          family: FontAwesome;
+          size: 11px;
+        }
+        left: 0;
+        line-height: $icon-size;
+        padding-left: 2px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+      }
+    }
+  }
+
+  // Other Programs Box
+  .explore-other-programs {
+    p {
+      @include font-size(20px);
+      color: $color-blue-dark;
+      font: {
+        family: $font-secondary;
+        style: italic;
+      }
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .btn-programs {
+      margin: 0 auto;
+      width: 45%;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+// ==========================================================================
+// This stylesheet contains form elements.
+// ==========================================================================
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  @include font-size(20px);
+  @include size(100%, $height-form-input);
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: inline-block;
+  border: $border-forms $color-gray-light;
+  color: $color-default-font;
+  font: {
+    family: Arial, Helvetica, sans-serif;
+    weight: normal;
+  }
+  line-height: em(32);
+  padding: 4px 6px 4px 14px;
+  vertical-align: middle;
+
+  &:focus {
+    border-color: #afafaf;
+    box-shadow: none;
+    font-weight: bold;
+    outline: 0;
+  }
+
+  // Removes Chrome default yellow background on inputs
+  &:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset;
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  &:focus {
+    outline: 0;
+  }
+}
+
+div.radio,
+div.radio-inline {
+  margin-right: 30px;
+  padding: 0;
+
+  label {
+    @include font-size(20px);
+    color: $color-default-font;
+    font: {
+      family: Arial, Helvetica, sans-serif;
+      weight: normal;
+    }
+    line-height: em(32);
+    padding: 0 0 0 10px;
+    text-transform: none;
+  }
+}
+
+textarea {
+  height: auto;
+}
+
+label {
+  @include font-size(18px);
+  color: $color-gray;
+  display: block;
+  font: {
+    family: $font-primary-bold;
+    weight: normal;
+  }
+  line-height: em(22);
+  margin-bottom: 10px;
+  padding-top: 5px;
+  width: auto;
+
+  &.has-subtext {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+}
+
+.callout-copy {
+  @include font-size(19px);
+  color: $color-purple;
+  line-height: normal;
+}
+
+.subtext {
+  @include font-size(13px);
+  color: $color-gray;
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.error {
+  input,
+  select,
+  textarea,
+  input :focus,
+  textarea :focus {
+    @include css3-pie;
+    border: $border-forms #cc3333 !important;
+  }
+
+  small {
+    @include font-size(12px);
+    display: block;
+    padding: 6px 4px;
+    margin-top: -13px;
+    margin-bottom: 12px;
+    background: #c60f13;
+    color: #fff;
+    font-weight: bold;
+    border-radius: $border-radius-default;
+  }
+}

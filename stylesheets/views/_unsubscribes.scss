@@ -1,0 +1,65 @@
+body.unsubscribes {
+  #unsubscribe-prompt {
+    position: absolute;
+    right: 85px;
+    top: -$page-container-padding;
+    width: 245px;
+
+    &:hover {
+      .barbara-yeti {
+        height: 150px;
+      }
+    }
+  }
+
+  .barbara-yeti {
+    background: image-url("application/unsubscribes/barbara-yeti.png") bottom center no-repeat;
+    height: 60px;
+    margin-bottom: 40px;
+    transition: height .5s ease-out; 
+  }
+
+  .unsubscribe-message {
+    $border-width: 4px;
+    $arrow-size: 16px;
+    border: $border-width solid $color-gray-lightest;
+    padding: 24px;
+    position: relative;
+    text-align: center;
+
+    &::before {
+      @include absolute-center($arrow-size);
+      border: {
+        color: transparent transparent $color-gray-lightest;
+        style: solid;
+        width: 0 10px $arrow-size;
+      }
+      bottom: auto;
+      content: "";
+      display: block;
+      top: -($border-width + $arrow-size);
+    }
+
+    .h5 {
+      font-family: $font-primary-medium;
+    }
+
+    p {
+      font: {
+        family: $font-secondary;
+        size: 13px;
+        style: italic;
+      }
+      color: $color-gray;
+      margin-bottom: 0;
+    }
+  }
+
+  a.manage-email {
+    font: {
+      family: $font-secondary;
+      style: italic;
+    }
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,67 @@
+// Customizing variables for bootstrap
+$grid-gutter-width: 30px;
+// Large screen / wide desktop
+$container-large-desktop: ((1140px + $grid-gutter-width));
+// For `$screen-lg-min` and up.
+$container-lg: $container-large-desktop;
+// Core variables for bootstrap
+@import "bootstrap/variables";
+
+// Core Bootstrap mixins
+@import "bootstrap/mixins";
+
+// Reset
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/grid";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/navbar";
+@import "bootstrap/forms";
+@import "bootstrap/tables";
+@import "bootstrap/tooltip";
+
+// FIXME: When Bootstrap's text-center provides this, this can be removed.
+.text-center {
+  text-align: center;
+}
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+// Custom variables go here...
+
+$screen-lg-min: $container-lg;
+
+@media (min-width: $screen-sm-min) { // Hopefully this will be removed at some point. But to accomodate an 8 domain mural, I have to expand the bootstrap grid.
+  body.assessments.progress {
+    .inner-wrap {
+      min-width: 1170px;
+    }
+
+    #content.container {
+      max-width: 100%;
+      width: 1170px;
+    }
+  }
+}
+
+.container {
+  @media (min-width: $screen-sm-min) {
+    max-width: 100%;
+    width: $container-lg;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}

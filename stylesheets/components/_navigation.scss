@@ -1,0 +1,232 @@
+$color-nav: #ffffff;
+$color-nav-hover: darken($color-nav, 10%);
+
+@keyframes circleOn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Nav-container {
+  @include ie8-zindex-fix;
+  float: right;
+  position: relative;
+
+  .dropdown-backdrop {
+    position: static; // Fixes a bootstrap bug
+  }
+}
+
+// General Nav
+.Nav {
+  float: right;
+  position: relative;
+
+  .Nav-item {
+    display: inline-block;
+    margin-right: -4px;
+
+    .Nav-item-link {
+      border-right: 1px solid #8e8680;
+      color: $color-nav !important; // To Disable Bootstrap
+      display: block;
+      font: $font-nav;
+      letter-spacing: $nav-letter-space;
+      margin: 35px 0 18px;
+      padding: 9px 10px;
+      text-transform: uppercase;
+      white-space: normal !important; // To Disable Bootstrap
+
+      &:focus,
+      &:hover {
+        color: $color-nav-hover;
+      }
+    }
+
+    &:last-child {
+      .Nav-item-link {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+
+    // Unread Notifications
+    &.unread {
+      .nav-alert {
+        .alert-icon {
+          display: block;
+        }
+      }
+    }
+
+    .nav-alert {
+      font-size: 17px;
+      left: 26px;
+      position: absolute;
+      top: -16px;
+
+      .alert-icon {
+        animation: pulse 2s 0.5s ease infinite;
+        color: #b3b0dd;
+        display: none;
+      }
+
+      .unread-notification-count {
+        color: #454444;
+        font-size: 11px;
+        height: 100%;
+        left: 0;
+        line-height: 17px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    .no-notifications {
+      padding: 15px;
+      color: $color-nav;
+      font: {
+        size: 12px;
+        style: italic;
+      }
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+// Modified for Horizontal Nav
+.Nav--horizontal {
+  .Nav-item {
+    &:last-child {
+      .Nav-item-link {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// Modified for Vertical Nav
+.Nav--vertical {
+  background: $color-gray-dark;
+  position: absolute;
+  width: 100%;
+
+  .Nav-item {
+    display: block;
+    margin-right: 0; // Removes negative margin for inline-block
+
+    .Nav-item-link {
+      border: {
+        bottom: 1px solid $color-user-nav-hover;
+        right: 0;
+      }
+      margin: 0;
+      padding: 14px 15px;
+
+      &:focus,
+      &:hover {
+        background: $color-user-nav-hover;
+      }
+    }
+
+    &-icon {
+      margin: 0 15px 0 0;
+
+      i {
+        @include size($nav-icon-size-sm);
+        margin-bottom: 0;
+      }
+    }
+
+    &-icon,
+    &-text {
+      @include vertical-align;
+    }
+  }
+
+  // Dropdown Menu
+  &.dropdown-menu {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+    left: auto;
+    padding: 0;
+    position: absolute;
+    right: -12px;
+    top: 83px;
+    z-index: 205;
+
+    // Dropdown Arrow
+    &::before {
+      border: {
+        color: transparent transparent $color-gray-dark;
+        style: solid;
+        width: 0 7px 9px;
+      }
+      bottom: auto;
+      content: "";
+      display: block;
+      position: absolute;
+      right: 12px;
+      top: -9px;
+    }
+  }
+}
+
+// Notification Menu Specific
+.notifications-menu {
+  .dropdown-menu {
+    left: -297px;
+    top: 48px;
+    width: 350px;
+
+    .Nav-item-link {
+      font: {
+        family: Arial, sans-serif;
+        size: 12px;
+      }
+      text-transform: none;
+    }
+
+    .Nav-item-text {
+      width: 68%;
+    }
+  }
+
+  .notifications-timestamp {
+    float: right;
+    margin-right: -65px;
+  }
+}
+
+// User Nav Specific
+.user-nav {
+  .dropdown-menu {
+    width: 178px;
+  }
+
+  .salutation-icon {
+    margin-left: 10px;
+  }
+}
+

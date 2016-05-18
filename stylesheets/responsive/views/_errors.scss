@@ -1,0 +1,71 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.errors {
+    .inner-wrap {
+      background: #ffffff;
+    }
+
+    .ErrorContent {
+      margin-top: 0;
+      padding: 0 15px;
+
+      &-code {
+        font-size: 185px;
+
+        &::before {
+          bottom: 50px;
+        }
+      }
+    }
+
+    .Trees {
+      display: none;
+    }
+
+    .Yeti {
+      right: 0;
+      top: -63px;
+      width: 80%;
+    }
+
+    .SnowBg {
+      height: 350px;
+      
+      &::before {
+        top: -43px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1299px) {
+  body.errors {
+    .ErrorContent {
+      width: 100%;
+
+      &-code {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1229px) {
+  body.errors {
+    .Path {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: 520px) and (max-width : $screen-xs-max) {
+  body.errors {
+    .Yeti {
+      top: -190px;
+      width: 60%;
+    }
+
+    .SnowBg {
+      height: 460px;
+    }
+  }
+}

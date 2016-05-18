@@ -1,0 +1,112 @@
+body.programs.show {
+  .page-header {
+    @include page-header-bg;
+    
+    p {
+      padding-bottom: 40px;
+    }
+
+    .Button {
+      margin: 0 0 -55px;
+    }
+  }
+
+  .page-container {
+    margin-top: 70px;
+  }
+
+  .program-desc-heading {
+    @extend .h4;
+  }
+
+  .programn-screenshot {
+    margin: 20px 0 0;
+  }
+
+  .program-logo {
+    @include size(220px);
+    margin: 0 auto 20px;
+  }
+
+  .program-trademark {
+    @include font-size(16px);
+  }
+
+  .sponsored-by {
+    @include font-size(15px);
+    color: #a9a9a9;
+    font: {
+      family: $font-secondary;
+      style: italic;
+    }
+    margin-top: 20px;
+
+    .contract-logo {
+      @include vertical-align;
+      margin-left: 10px;
+      vertical-align: bottom;
+      width: 140px;
+
+      img {
+        filter: grayscale(100%);
+        opacity: 0.7;
+        width: 100%;
+      }
+    }
+  }
+
+  .BorderedContainer--noLogo {
+    margin-top: 70px;
+  }
+
+  .all-products-title {
+    margin: -86px 0 50px;
+    text-align: center;
+
+    span {
+      background: #ffffff;
+      padding: 0 30px;
+    }
+  }
+
+  ul.product-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-bottom: 1px solid $color-gray-light;
+      margin-bottom: 17px;
+      padding-bottom: 14px;
+
+      &:last-child {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    a {
+      @extend .h5;
+    }
+
+    .product-slash {
+      margin: 0 10px;
+    }
+
+    .product-list-label {
+      @include font-size(16px);
+    }
+  }
+
+  // Remove the grayscale from Wellvolution
+  &.wellvolution {
+    .sponsored-by {
+      .contract-logo {
+        img {
+          filter: none;
+        }
+      }
+    }
+  }
+}

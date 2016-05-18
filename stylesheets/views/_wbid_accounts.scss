@@ -1,0 +1,19 @@
+body.wbid_accounts {
+  &.failure {
+    .section-content {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .failure-icon {
+      @include circle-icon($bg-color: $color-purple, $size: 176);
+      background: {
+        image: image-url("application/icons/bubble-icon.png");
+        position: center center;
+        repeat: no-repeat;
+      }
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+      margin: 0 auto 30px;
+    }
+  }
+}

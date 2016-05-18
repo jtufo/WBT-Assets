@@ -1,0 +1,102 @@
+@media only screen and (max-width: $screen-xs-max) {
+  body.customer_contracts.show {
+    background-size: auto;
+
+    &.acme {
+      #quitnet-program {
+        .block-left,
+        .block-right {
+          float: none;
+          margin: 0;
+        }
+      }
+    }
+
+    // Header
+    .header-wrap {
+      .contract-logo {
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    // Welcome
+    .hero {
+      background: {
+        position: bottom center;
+        size: cover;
+      }
+      padding: 30px 0;
+    }
+
+    .programs-start {
+      padding: 20px 0;
+    }
+
+    // Programs
+    .program {
+      padding: 25px 0;
+
+      .product-img {
+        @include size(234px, 147px);
+        background-position: center !important;
+        margin: 20px auto 20px;
+      }
+
+      .col-sm-6 {
+        width: 100%;
+      }
+    }
+
+    .programs-sections {
+      padding-top: 20px;
+
+      ul {
+        margin: 0;
+
+        li {
+          list-style-position: inside;
+        }
+      }
+    }
+
+    .programs-additional {
+      padding: 30px 0;
+    }
+
+    // Footer
+    footer {
+      padding-top: 0;
+
+      .copyright {
+        .myh-logo {
+          height: 35px;
+        }
+      }
+
+      .contract-block {
+        padding: 5px 0;
+
+        .footer-logo {
+          padding-right: 0;
+
+          img {
+            max-width: 80%;
+          }
+        }
+
+        .footer-text,
+        .footer-logo {
+          text-align: center;
+          width: 100%;
+        }
+
+        .footer-text {
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+}

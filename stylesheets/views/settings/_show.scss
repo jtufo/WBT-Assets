@@ -1,0 +1,41 @@
+body.settings.show {
+  .settings-desc {
+    @include font-size(16px);
+    color: #7c7c7c;
+    font: {
+      family: $font-secondary;
+      style: italic;
+    }
+    padding-top: 5px;
+  }
+
+  .form-group {
+    margin: 25px 0;
+
+    .email-setting {
+      label {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .change-email {
+    @include font-size(16px);
+    text-align: center;
+
+    a {
+      font: {
+        family: $font-secondary;
+        style: italic;
+      }
+      line-height: 33px;
+      text-decoration: underline;
+    }
+  }
+
+  #individually-configurable {
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+}
